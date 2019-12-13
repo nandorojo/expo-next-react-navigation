@@ -1,0 +1,31 @@
+{
+  "name": "expo-next-react-navigation",
+  "version": "0.0.1",
+  "description": "Make Next.js and react-navigation play nicely together with an Expo/React Native Web app.",
+  "main": "lib/module/index.js",
+  "repository": "https://github.com/nandorojo/expo-next-react-navigation",
+  "author": "Fernando Rojo",
+  "license": "MIT",
+  "devDependencies": {
+    "@react-native-community/bob": "^0.7.0"
+  },
+  "files": [
+    "src",
+    "lib"
+  ],
+  "@react-native-community/bob": {
+    "source": "src",
+    "output": "lib",
+    "targets": [
+      "module",
+      "typescript"
+    ]
+  },
+  "react-native": "src/index.ts",
+  "module": "lib/module/index.js",
+  "types": "lib/typescript/src/index.d.ts",
+  "scripts": {
+    "prepare": "bob build",
+    "deploy": "yarn prepare && npm publish"
+  }
+}
