@@ -1,6 +1,6 @@
 # Next.js + React Navigation 🥳
 
-_Don't use this yet. This isn't ready yet, I'm still migrating files over from my project to make it all work. Should be testable shortly._
+_still need help testing!_
 
 This library was inspired by 1) the awesome integration between `expo`/`next-js` and 2) the challenges of managing navigation across a native and web project.
 
@@ -20,7 +20,7 @@ yarn add expo-next-react-navigation
 
 ## Set up
 
-**1. Install next with expo:** Follow @evanbacon's guide on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/). Become familiar with next's general architecture with expo before continuting.
+**1. Install next with expo:** Follow [@evanbacon](https://github.com/EvanBacon)'s guide on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/). Become familiar with next's general architecture with expo before continuting.
 
 **2. Edit/create next.config.js**
 
