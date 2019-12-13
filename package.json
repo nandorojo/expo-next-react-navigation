@@ -1,6 +1,6 @@
 {
 	"name": "expo-next-react-navigation",
-	"version": "0.0.5",
+	"version": "0.0.6",
 	"description": "Make Next.js and react-navigation play nicely together with an Expo/React Native Web app.",
 	"main": "lib/module/index.js",
 	"repository": "https://github.com/nandorojo/expo-next-react-navigation",
