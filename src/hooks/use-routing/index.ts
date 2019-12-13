@@ -25,7 +25,7 @@ export default function useRouting() {
 		},
 		[pushTo]
 	)
-	const getParam = <Param>(param: string, fallback?: string): Param => {
+	const getParam = <Param>(param: string, fallback?: unknown): Param => {
 		const value: Param = grabParam(param, fallback)
 		return value
 	}

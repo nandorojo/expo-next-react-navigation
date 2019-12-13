@@ -11,9 +11,9 @@ export default function useRouting() {
 
 	const getParam = <Param>(
 		param: Parameters<typeof _.get>['1'],
-		fallback?: string
+		fallback?: unknown
 	): Param => {
-		const val: Param = _.get(query, param, fallback)
+		const val: Param = _.get(query, param) ?? fallback
 		if (val === undefined) {
 			console.warn('Tried to get param', param, 'but it does not exist')
 		}

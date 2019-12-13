@@ -133,7 +133,7 @@ But that's not added yet.
 
 #### `getParam`
 
-Same API as `getParam` from react-navigation.
+[Same API](https://reactnavigation.org/docs/en/navigation-prop.html#getparam-get-a-specific-param-value-with-a-fallback) as `getParam` from react-navigation.
 
 Similar to `query` from `next/router`, except that it's a function to grab the values.
 
@@ -153,9 +153,9 @@ export default function User() {
 
 ## `useFocusEffect`
 
-See [react navigation docs](https://reactnavigation.org/docs/en/next/use-focus-effect.html#docsNav). On web, it simply replaces the focus effect with a normal effect hook.
+See [react navigation docs](https://reactnavigation.org/docs/en/next/use-focus-effect.html#docsNav). On web, it simply replaces the focus effect with a normal effect hook. On mobile, it is the exact react navigation hook.
 
-Make sure to use `useCallback` for the function you pass it, as seen in the example.
+Make sure to use [useCallback](https://reactjs.org/docs/hooks-reference.html#usecallback) as seen in the example.
 
 ```es6
 import { useFocusEffect } from 'expo-next-react-navigation'
