@@ -91,7 +91,7 @@ Only argument is a dictionary with these values
 
 -   `routeName`: string, required
 -   `params`: optional dictionary
--   `webOverride`: custom `routeName` that only gets used on web.
+-   `webRoute`: custom `routeName` that only gets used on web.
 
 **Example:** Navigate to a user
 
@@ -103,27 +103,27 @@ export default function Home() {
   const onPress = () => navigate({ routeName: 'user', params: { id: 'chris' } })
 
   // goes to `yourdomain.com/user/chris`
-  const navigateCleanLink = () => navigate({ routeName: 'user', params: { id: 'chris' }, webOverride: `user/chris` })
+  const navigateCleanLink = () => navigate({ routeName: 'user', params: { id: 'chris' }, webRoute: `user/chris` })
 }
 
   // goes to `yourdomain.com/user/chris?color=blue`
-  const navigateCleanLinkWithParam = () => navigate({ routeName: 'user', params: { id: 'chris', color: 'blue' }, webOverride: `user/chris` })
+  const navigateCleanLinkWithParam = () => navigate({ routeName: 'user', params: { id: 'chris', color: 'blue' }, webRoute: `user/chris` })
 }
 ```
 
 This follows the next pattern of [dynamic routing](https://nextjs.org/learn/basics/clean-urls-with-dynamic-routing). You'll need to create a `pages/user/[id].tsx` file.
 
-**Thoughts on the `webOverride` field:**
+**Thoughts on the `webRoute` field:**
 
-`webOverride` can provide cleaner urls (`user/mike` instead of `user?id=mike`).
+`webRoute` can provide cleaner urls (`user/mike` instead of `user?id=mike`).
 
 Alos, navigation patterns on mobile can be different than web. For instance, if one tab has a stack navigator of an inbox and a chat room, and you navigate to that tab when a chat room is open, you might not want it to pop back to the inbox screen until you tap that tab twice. On web, however, the pattern might favor going back to the inbox every time you click the inbox item from the header at the top.
 
-I've also considered letting the `webOverride` field take a dynamic field like this `route/:param`:
+I've also considered letting the `webRoute` field take a dynamic field like this `route/:param`:
 
 ```
   // goes to `yourdomain.com/user/chris`
-  const navigateCleanLink = () => navigate({ routeName: 'user', params: { id: 'chris' }, webOverride: `user/:id` })
+  const navigateCleanLink = () => navigate({ routeName: 'user', params: { id: 'chris' }, webRoute: `user/:id` })
 
   // goes to yourdomain.com/user?id=chris
   const onPress = () => navigate({ routeName: 'user', params: { id: 'chris' } })
