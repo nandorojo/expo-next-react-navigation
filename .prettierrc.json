@@ -1,0 +1,1 @@
+{"singleQuote":true,"trailingComma":"es5","overrides":[{"files":"*.ts","options":{"parser":"typescript"}}],"semi":false,"jsxSingleQuote":false,"useTabs":true,"tabWidth":4}
