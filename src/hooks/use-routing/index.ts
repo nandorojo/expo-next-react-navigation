@@ -11,7 +11,7 @@ export default function useRouting() {
 	} = useNavigation()
 
 	const navigate = useCallback(
-		<To extends NavigateTo = NavigateTo>(route: To | NavigateTo) => {
+		<To extends NavigateTo = NavigateTo>(route: To) => {
 			nav({
 				routeName: route.routeName,
 				params: route.params,

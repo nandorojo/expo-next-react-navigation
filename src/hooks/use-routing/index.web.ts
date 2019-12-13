@@ -18,7 +18,7 @@ export default function useRouting() {
 	}
 
 	const navigate = useCallback(
-		<To extends NavigateTo = NavigateTo>(route: To | NavigateTo) => {
+		<To extends NavigateTo = NavigateTo>(route: To) => {
 			Router.push(`/${route.webRoute ?? route.routeName}`, {
 				query: { ...(route.params ?? empty.object) },
 			})

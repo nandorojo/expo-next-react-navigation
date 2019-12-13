@@ -1,18 +1,23 @@
-import React from 'react'
-import Link from 'next/link'
+import React, { useMemo } from 'react'
+import NextLink from 'next/link'
 import empty from '../../utils/empty'
 import { LinkProps } from './types'
 
-export default function Links(props: LinkProps) {
+export default function Link(props: LinkProps) {
+	const { nextLinkProps = empty.object } = props
+	const query = useMemo(() => ({ ...(props.params || empty.object) }), [
+		props.params,
+	])
+	const href = useMemo(
+		() => ({
+			query,
+			pathname: `/${props.webRoute ?? props.routeName}`,
+		}),
+		[props.webRoute, props.routeName, query]
+	)
 	return (
-		<Link
-			href={{
-				pathname: `/${props.routeName}`,
-				query: { ...(props.params || empty.object) },
-			}}
-			passHref
-		>
+		<NextLink passHref {...nextLinkProps} href={href}>
 			{props.children}
-		</Link>
+		</NextLink>
 	)
 }
