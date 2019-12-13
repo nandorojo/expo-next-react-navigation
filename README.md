@@ -20,7 +20,7 @@ yarn add expo-next-react-navigation
 
 ## Set up
 
-**1. Install next with expo:** Follow @evanbacon's guide on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/).
+**1. Install next with expo:** Follow @evanbacon's guide on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/). Become familiar with next's general architecture with expo before continuting.
 
 **2. Edit/create next.config.js**
 
@@ -151,4 +151,24 @@ export default function User() {
 }
 ```
 
-##
+## `useFocusEffect`
+
+See [react navigation docs](https://reactnavigation.org/docs/en/next/use-focus-effect.html#docsNav). On web, it simply replaces the focus effect with a normal effect hook.
+
+Make sure to use `useCallback` for the function you pass it, as seen in the example.
+
+```es6
+import { useFocusEffect } from 'expo-next-react-navigation'
+
+export default ({ userId }) => {
+	useFocusEffect(
+		useCallback(() => {
+			const unsubscribe = API.subscribe(userId, user => setUser(user))
+
+			return () => unsubscribe()
+		}, [userId])
+	)
+
+	return <Profile userId={userId} />
+}
+```
