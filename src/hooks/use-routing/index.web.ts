@@ -25,14 +25,14 @@ export default function useRouting() {
 			if (route.webRoute) {
 				Router.push(
 					{
-						pathname: `/${route.routeName}`,
+						pathname: `${route.routeName}`,
 						query: { ...(route.params ?? empty.object) },
 					},
 					route.webRoute
 				)
 			} else {
 				Router.push({
-					pathname: `/${route.routeName}`,
+					pathname: `${route.routeName}`,
 					query: { ...(route.params ?? empty.object) },
 				})
 			}
