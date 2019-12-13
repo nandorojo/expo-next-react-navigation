@@ -9,8 +9,11 @@ const goBack = () => Router.back()
 export default function useRouting() {
 	const { query } = useRouter()
 
-	const getParam = <Param>(param: Parameters<typeof _.get>['1']): Param => {
-		const val: Param = _.get(query, param)
+	const getParam = <Param>(
+		param: Parameters<typeof _.get>['1'],
+		fallback?: string
+	): Param => {
+		const val: Param = _.get(query, param, fallback)
 		if (val === undefined) {
 			console.warn('Tried to get param', param, 'but it does not exist')
 		}
