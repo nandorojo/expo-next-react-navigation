@@ -40,20 +40,20 @@ const withTM = require('next-transpile-modules')
 const withPlugins = require('next-compose-plugins')
 
 module.exports = withPlugins(
-	[
-		[
-			withTM,
-			{
-				transpileModules: ['expo-next-react-navigation'],
-			},
-		],
-		withFonts,
-		withImages,
-		[withExpo, { projectRoot: __dirname }],
-	],
-	{
-		// ...
-	}
+  [
+    [
+      withTM,
+      {
+        transpileModules: ['expo-next-react-navigation'],
+      },
+    ],
+    withFonts,
+    withImages,
+    [withExpo, { projectRoot: __dirname }],
+  ],
+  {
+    // ...
+  }
 )
 ```
 
@@ -61,11 +61,11 @@ _You can add other packages that need transpiling to the `transpileModules` arra
 
 ## Table of contents
 
--   Hooks
-    -   `useRouting`
-    -   `useFocusEffect`
--   Components
-    -   `Link`
+- Hooks
+  - `useRouting`
+  - `useFocusEffect`
+- Components
+  - `Link`
 
 ## `useRouting`
 
@@ -89,13 +89,15 @@ export default () => {
 
 Only argument is a dictionary with these values
 
--   `routeName`: string, required
--   `params`: optional dictionary
--   `webRoute`: custom `routeName` that only gets used on web.
+- `routeName`: string, required
+- `params`: optional dictionary
+- `web`: Optional dictionary with added values for web, following the API from `next/router`'s `Router.push` [function](https://nextjs.org/docs#with-url-object-1).
+- `path`: (optional) Fulfills the same value as `pathname` from `next/router`, overriding the `routeName` field. If you set this to `/cars`, it will navigate to `/cars` instead of the `routeName` field. As a result, it will load the file located at `pages/cars.js`.
+- `as`: (optional) If set, the browser will show this value in the address bar. Useful if you want to show a pretty/custom URL in the address bar that doesn't match the actual path. Unlike the `path` field, this does not affect which route you actually go to.
 
 **Example:** Navigate to a user
 
-```
+```es6
 export default function Home() {
   const { navigate } = useRouting()
 
@@ -103,11 +105,22 @@ export default function Home() {
   const onPress = () => navigate({ routeName: 'user', params: { id: 'chris' } })
 
   // goes to `yourdomain.com/user/chris`
-  const navigateCleanLink = () => navigate({ routeName: 'user', params: { id: 'chris' }, webRoute: `user/chris` })
-}
+  const navigateCleanLink = () =>
+    navigate({
+      routeName: 'user',
+      params: { id: 'chris' },
+      web: { as: `/user/chris` },
+    })
 
-  // goes to `yourdomain.com/user/chris?color=blue`
-  const navigateCleanLinkWithParam = () => navigate({ routeName: 'user', params: { id: 'chris', color: 'blue' }, webRoute: `user/chris` })
+  // 'profile' path overrides 'user' on web, so it uses the pages/profile.js file
+  // shows up as yourdomain.com/@chris
+  // ...even though it navigates to yourdomain.com/profile?id=chris?color=blue`
+  const navigateCleanLinkWithParam = () =>
+    navigate({
+      routeName: 'user',
+      params: { id: 'chris', color: 'blue' }, // accessed with getParam in the next screen
+      web: { as: `/@chris`, path: 'profile' },
+    })
 }
 ```
 
@@ -143,11 +156,11 @@ Imagine you navigated to `yourdomain.com/user/chris` on web using the example ab
 
 ```es6
 export default function User() {
-	const { getParam } = useRouting()
+  const { getParam } = useRouting()
 
-	const id = getParam('id') // chris
+  const id = getParam('id') // chris
 
-	// do something with the id
+  // do something with the id
 }
 ```
 
@@ -161,14 +174,14 @@ Make sure to use [useCallback](https://reactjs.org/docs/hooks-reference.html#use
 import { useFocusEffect } from 'expo-next-react-navigation'
 
 export default ({ userId }) => {
-	useFocusEffect(
-		useCallback(() => {
-			const unsubscribe = API.subscribe(userId, user => setUser(user))
+  useFocusEffect(
+    useCallback(() => {
+      const unsubscribe = API.subscribe(userId, user => setUser(user))
 
-			return () => unsubscribe()
-		}, [userId])
-	)
+      return () => unsubscribe()
+    }, [userId])
+  )
 
-	return <Profile userId={userId} />
+  return <Profile userId={userId} />
 }
 ```
