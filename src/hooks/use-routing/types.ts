@@ -21,7 +21,10 @@ export type NavigateTo = GenericRoute
 
 export type Params<P> = { params: P }
 
-export type WebRoute<Path extends string = '', As extends string = ''> = {
+export type WebRoute<
+	Path extends string | undefined = '',
+	As extends string = ''
+> = {
 	web: {
 		path?: Path
 		as?: As
