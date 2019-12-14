@@ -11,14 +11,17 @@ export type Route<
 type GenericRoute = {
 	routeName: string
 	params?: object
-	webRoute?: string
+	web?: WebRoute<string>
 }
 
 export type NavigateTo = GenericRoute
 
 export type Params<P> = { params: P }
 
-export type WebRoute<Route> = { webRoute: Route }
+export type WebRoute<Path extends string, As extends string = ''> = {
+	path?: Path
+	as?: As
+}
 
 // export type NavigateTo<R extends string, P, Web> = Route<R> &
 // 	P extends undefined

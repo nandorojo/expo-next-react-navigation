@@ -22,20 +22,13 @@ export default function useRouting() {
 
 	const navigate = useCallback(
 		<To extends NavigateTo = NavigateTo>(route: To) => {
-			if (route.webRoute) {
-				Router.push(
-					{
-						pathname: `${route.routeName}`,
-						query: { ...(route.params ?? empty.object) },
-					},
-					route.webRoute
-				)
-			} else {
-				Router.push({
-					pathname: `${route.routeName}`,
+			Router.push(
+				{
+					pathname: `/${route.web?.path ?? route.routeName}`,
 					query: { ...(route.params ?? empty.object) },
-				})
-			}
+				},
+				route.web?.as
+			)
 		},
 		[]
 	)
