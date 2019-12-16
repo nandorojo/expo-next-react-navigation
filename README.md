@@ -10,12 +10,12 @@ The idea here is to copy the `react-navigation` api that you're already using wi
 
 ## Table of contents
 
-- Set up
+- [Set up](#set-up)
 - Hooks
-  - `useRouting`
-  - `useFocusEffect`
+  - [`useRouting`](#userouting)
+  - [`useFocusEffect`](#useFocusEffect)
 - Components
-  - `Link`
+  - [`Link`](#link)
 
 ## Set up
 
