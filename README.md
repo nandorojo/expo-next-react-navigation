@@ -79,6 +79,8 @@ module.exports = withPlugins(
 )
 ```
 
+**All done! Run `yarn next dev` & open [http://localhost:3000](http://localhost:3000)** 👻
+
 _You can add other packages that need transpiling to the `transpileModules` array. See [this post](https://forums.expo.io/t/next-js-expo-web-syntaxerror-unexpected-token-export-with-npm-module/31127) for details._
 
 ## Table of contents
