@@ -10,6 +10,7 @@ The idea here is to copy the `react-navigation` api that you're already using wi
 
 ## Table of contents
 
+- Set up
 - Hooks
   - `useRouting`
   - `useFocusEffect`
