@@ -19,6 +19,8 @@
     "types": ["react", "react-native"],
     "skipLibCheck": true,
     "module": "esnext"
+    // "emitDeclarationOnly": true,
+    // "declaration":
   },
   "include": ["src/index.ts"],
   "exclude": ["node_modules"]

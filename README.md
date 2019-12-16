@@ -8,9 +8,17 @@ The idea here is to copy the `react-navigation` api that you're already using wi
 
 The only thing you'll need to "change" about your workflow from a pure RN project is setting up a `pages/` folder with files that match your react-navigation routes.
 
-## Installation
+## Usage
+
+These methods provide replacements for
 
 ```
+
+```
+
+## Installation
+
+```es6
 npm i expo-next-react-navigation
 
 // or
