@@ -1,5 +1,9 @@
 # Next.js + React Navigation 🥳
 
+```es6
+yarn add expo-next-react-navigation
+```
+
 _still need help testing!_
 
 This library was inspired by 1) the awesome integration between `expo`/`next-js` and 2) the challenges of managing navigation across a native and web project.
@@ -36,18 +40,6 @@ Replace the following instances in your code after installation and setup:
 +<Link routeName="chat" params={{ roomId: 'hey!' }}>
 +  <Text>Go</Text>
 +</Link>
-```
-
-## Installation
-
-```es6
-yarn add expo-next-react-navigation
-```
-
-or
-
-```es6
-npm i expo-next-react-navigation
 ```
 
 ## Set up
