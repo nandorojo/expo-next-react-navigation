@@ -2,7 +2,7 @@
 
 A set of hooks that copy the the `react-navigation` API that you're already using with an Expo app, and make it work with `next/router`.
 
-I use this to let me use the [expo/next-js integration](https://docs.expo.io/versions/latest/guides/using-nextjs/) without stressing about navigation.
+This library helps me use the [expo/next-js integration](https://docs.expo.io/versions/latest/guides/using-nextjs/) without stressing about navigation.
 
 ## Example
 
