@@ -115,9 +115,9 @@ React hook that wraps `useNavigation` (from react-navigation) hook and `useRoute
 
 It follows the [same API](https://reactnavigation.org/docs/en/next/use-navigation.html) as `useNavigation`.
 
-### Dynamic routing
+#### Dynamic routing
 
-```
+```es6
 import { useRouting } from 'expo-next-react-navigation`
 
 export default () => {
@@ -127,7 +127,7 @@ export default () => {
 }
 ```
 
-#### `navigate`
+### `navigate`
 
 Only argument is a dictionary with these values
 
@@ -227,7 +227,7 @@ const navigateToChatRoom = () =>
 
 This would open the `pages/chat/[roomId].js` file, with `roomId` as a param.
 
-#### `getParam`
+### `getParam`
 
 [Same API](https://reactnavigation.org/docs/en/navigation-prop.html#getparam-get-a-specific-param-value-with-a-fallback) as `getParam` from react-navigation.
 
