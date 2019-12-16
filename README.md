@@ -115,8 +115,6 @@ React hook that wraps `useNavigation` (from react-navigation) hook and `useRoute
 
 It follows the [same API](https://reactnavigation.org/docs/en/next/use-navigation.html) as `useNavigation`.
 
-#### Dynamic routing
-
 ```es6
 import { useRouting } from 'expo-next-react-navigation`
 
