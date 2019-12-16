@@ -245,11 +245,11 @@ export default function Button() {
 
 **Required props**:
 
-- `routeName`: string, see `useRouting().navigate` docs.
+- `routeName`: string, see [`useRouting().navigate`](https://github.com/nandorojo/expo-next-react-navigation#navigate) docs.
 
 **Optional props**
 
-- `web`: dictionary, see `useRouting().navigate` docs.
+- `web`: dictionary, see [`useRouting().navigate`](https://github.com/nandorojo/expo-next-react-navigation#navigate) docs.
 
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
 
