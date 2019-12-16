@@ -17,6 +17,7 @@ yarn add expo-next-react-navigation
 ## Table of contents
 
 - [Set up](#set-up)
+- [Usage](#usage)
 - Hooks
   - [`useRouting`](#userouting)
   - [`useFocusEffect`](#useFocusEffect)
@@ -43,7 +44,7 @@ _I recommend becoming more familiar `next`'s architecture with `expo`. Follow th
 yarn add next-compose-plugins next-fonts next-images next-transpile-modules
 ```
 
-Next, edit `next.config.js` to look something like this:
+**Step 2: edit `next.config.js` to look something like this:**
 
 ```es6
 const { withExpo } = require('@expo/next-adapter')
