@@ -4,8 +4,6 @@
 yarn add expo-next-react-navigation
 ```
 
-_still need help testing!_
-
 This library was inspired by 1) the awesome integration between `expo`/`next-js` and 2) the challenges of managing navigation across a native and web project.
 
 The idea here is to copy the `react-navigation` api that you're already using with an Expo app, and make it work with `next/router`.
