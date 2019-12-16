@@ -144,8 +144,13 @@ export default function Home() {
   const { navigate } = useRouting()
 
   // goes to yourdomain.com/user?id=chris
-  const onPress = () => navigate({ routeName: 'user', params: { id: 'chris' } })
+  const onPress = () =>
+    navigate({
+      routeName: 'user',
+      params: { id: 'chris' },
+    })
 
+  // 👇or this👇
   // goes to `yourdomain.com/user/chris`
   const navigateCleanLink = () =>
     navigate({
@@ -154,6 +159,7 @@ export default function Home() {
       web: { as: `/user/chris` },
     })
 
+  // 👇or this👇
   // 'profile' path overrides 'user' on web, so it uses the pages/profile.js file
   // shows up as yourdomain.com/@chris
   // ...even though it navigates to yourdomain.com/profile?id=chris?color=blue`
@@ -174,7 +180,7 @@ This follows the next pattern of [dynamic routing](https://nextjs.org/learn/basi
 
 Also, navigation patterns on mobile can be different than web.
 
-For instance, imagine you have a tab navigator, and one tab has a nested stack navigator with an inbox screen and a chat room screen. If you navigate from a notifications tab to this tab, and a chat room is already open, you probably want that chat room to stay open on mobile. Only if you press the tab button a second time will it pop back to the inbox screen.
+For instance, imagine you have a tab navigator. Say the first tab has a nested stack navigator with an inbox screen and a chat room screen. If you navigate from a notifications tab to this tab, and a chat room screen was already open, you probably want that chat room to stay open on mobile. Only if you press the tab button a second time should it pop back to the inbox screen.
 
 This may not be the case on `web`. Web navigation patterns on web may lead you to want to open the inbox directly, instead of the open chat screen. This example could look something like this:
 
