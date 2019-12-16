@@ -42,11 +42,17 @@ Replace the following instances in your code after installation and setup:
 
 ## Set up
 
-**1. Install next with expo:** Follow [@evanbacon](https://github.com/EvanBacon)'s guide on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/). Become familiar with next's general architecture with expo before continuting.
+**1. Install next with expo:** Follow the guide on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/). Become familiar with next's general architecture with expo before continuting.
+
+- Init: `expo init` (or `npx create-next-app`)
+
+- Install: `yarn add @expo/next-adapter`
+
+- Configure: `yarn next-expo`
+
+- Start: `yarn next dev`
 
 **2. Edit/create next.config.js**
-
-First, install these dependencies:
 
 ```bash
 yarn add next-compose-plugins next-fonts next-images next-transpile-modules
