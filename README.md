@@ -161,8 +161,8 @@ export default function Home() {
 
   // 👇or this👇
   // 'profile' path overrides 'user' on web, so it uses the pages/profile.js file
-  // shows up as yourdomain.com/@chris
-  // ...even though it navigates to yourdomain.com/profile?id=chris?color=blue`
+  // even though it navigates to yourdomain.com/profile?id=chris?color=blue`
+  // ...it actually shows up as yourdomain.com/@chris in the URL bar.
   const navigateCleanLinkWithParam = () =>
     navigate({
       routeName: 'user',
