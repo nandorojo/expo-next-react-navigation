@@ -42,7 +42,7 @@ Replace the following instances in your code after installation and setup:
 
 ## Set up
 
-**1. Install next with expo:** Follow the guide on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/). Become familiar with next's general architecture with expo before continuting.
+**1. Install next with expo:**
 
 - Init: `expo init` (or `npx create-next-app`)
 
@@ -51,6 +51,8 @@ Replace the following instances in your code after installation and setup:
 - Configure: `yarn next-expo`
 
 - Start: `yarn next dev`
+
+I recommend becoming more familiar `next`'s architecture with `expo` before continuting. Follow the docs on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/) or see [this article](https://dev.to/evanbacon/next-js-expo-and-react-native-for-web-3kd9) by Evan Bacon.
 
 **2. Edit/create next.config.js**
 
