@@ -172,7 +172,7 @@ export default function Home() {
 }
 ```
 
-This follows the next pattern of [dynamic routing](https://nextjs.org/learn/basics/clean-urls-with-dynamic-routing). You'll need to create a `pages/user/[id].tsx` file.
+This follows the next pattern of [dynamic routing](https://nextjs.org/learn/basics/clean-urls-with-dynamic-routing). You'll need to create a `pages/user/[id].js` file.
 
 For more thoughts on how and when you should use the `web` field, see [Web Thoughts](#web-thoughts).
 
@@ -182,7 +182,7 @@ For more thoughts on how and when you should use the `web` field, see [Web Thoug
 
 Similar to `query` from `next/router`, except that it's a function to grab the values.
 
-**pages/user/[id].tsx**
+**pages/user/[id].js**
 
 Imagine you navigated to `yourdomain.com/user/chris` on web using the example above.
 
@@ -222,7 +222,7 @@ export default ({ userId }) => {
 
 The following will use the `chat` route in react navigation.
 
-However, it will use the `pages/room.tsx` file for nextjs. Also, it will show up as `domain.com/messages` in the address bar.
+However, it will use the `pages/room.js` file for nextjs. Also, it will show up as `domain.com/messages` in the address bar.
 
 Optionally accepts a `nextLinkProps` prop dictionary and `touchableOpacityProps` dictionary as well.
 
