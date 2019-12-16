@@ -1,4 +1,4 @@
-# Next.js + React Navigation 🥳
+# Expo + Next.js Router + React Navigation 🥳
 
 ```es6
 yarn add expo-next-react-navigation
