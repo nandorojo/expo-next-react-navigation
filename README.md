@@ -12,7 +12,7 @@ The idea here is to copy the `react-navigation` api that you're already using wi
 
 Replace the following instances in your code after installation and setup:
 
-### `useRouting`
+### `useNavigation` 👉 `useRouting`
 
 ```diff
 -import { useNavigation } from 'react-navigation-hooks'
@@ -26,7 +26,7 @@ Replace the following instances in your code after installation and setup:
 +import { useLayoutEffect } from 'expo-next-react-navigation'
 ```
 
-### `<Link />`
+### `<TouchableOpacity />` 👉 `<Link />`
 
 ```diff
 -import { TouchableOpacity } from 'react-native'
