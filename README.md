@@ -28,7 +28,7 @@ The idea here is to copy the `react-navigation` api that you're already using wi
 
 - Start: `yarn next dev`
 
-I recommend becoming more familiar `next`'s architecture with `expo`. Follow the docs on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/) or see [this article](https://dev.to/evanbacon/next-js-expo-and-react-native-for-web-3kd9) by Evan Bacon if you're curious.
+_I recommend becoming more familiar `next`'s architecture with `expo`. Follow the docs on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/) or see [this article](https://dev.to/evanbacon/next-js-expo-and-react-native-for-web-3kd9) by Evan Bacon if you're curious._
 
 **2. Edit/create next.config.js**
 
