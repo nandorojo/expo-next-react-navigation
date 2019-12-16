@@ -201,7 +201,7 @@ const navigateCleanLink = () =>
   navigate({
     routeName: 'chat',
     params: { roomId: 'chris' },
-    web: { dynamic: `chat/:roomId` },
+    web: { dynamic: `chat/[roomId]` },
   })
 
 // goes to yourdomain.com/chat?roomId=chris
@@ -212,17 +212,20 @@ const onPress = () =>
   })
 ```
 
-But that's not added yet. For now, the same is achieved by doing this:
+But that's not added. For now, the same is achieved by doing this:
 
 ```es6
 const roomId = 'chris'
-const navigateCleanLink = () =>
+
+const navigateToChatRoom = () =>
   navigate({
     routeName: 'chat',
     params: { roomId },
     web: { path: `chat/${roomId}` },
   })
 ```
+
+This would open the `pages/chat/[roomId].js` file, with `roomId` as a param.
 
 #### `getParam`
 
