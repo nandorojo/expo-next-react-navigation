@@ -6,21 +6,25 @@ This library was inspired by 1) the awesome integration between `expo`/`next-js`
 
 The idea here is to copy the `react-navigation` api that you're already using with an Expo app, and make it work with `next/router`.
 
-The only thing you'll need to "change" about your workflow from a pure RN project is setting up a `pages/` folder with files that match your react-navigation routes.
-
 ## Usage
 
 Replace the following instances in your code after installation and setup:
+
+### `useRouting`
 
 ```diff
 -import { useNavigation } from 'react-navigation-hooks'
 +import { useRouting } from 'expo-next-react-navigation'
 ```
 
+### `useLayoutEffect`
+
 ```diff
 -import { useLayoutEffect } from 'react-navigation-hooks'
 +import { useLayoutEffect } from 'expo-next-react-navigation'
 ```
+
+### `<Link />`
 
 ```diff
 -import { TouchableOpacity } from 'react-native'
