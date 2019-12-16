@@ -1,6 +1,6 @@
 # Expo + Next.js Router + React Navigation 🥳
 
-A set of hooks that copy the the `react-navigation` API that you're already using with an Expo app, and make it work with `next/router`.
+A set of hooks that wrap the the `react-navigation` API that you're already using with an Expo app, and make it work with `next/router`.
 
 This library helps me use the [expo/next-js integration](https://docs.expo.io/versions/latest/guides/using-nextjs/) without stressing about navigation.
 
@@ -31,6 +31,8 @@ yarn add expo-next-react-navigation
 - Init: `expo init` (or `npx create-next-app`)
 
 - Install: `yarn add @expo/next-adapter`
+
+- Install next: `yarn add next`
 
 - Configure: `yarn next-expo`
 
@@ -105,7 +107,7 @@ Replace the following instances in your code after installation and setup:
 -  <Text>Go</Text>
 - </TouchableOpacity>
 +<Link routeName="chat" params={{ roomId: 'hey!' }}>
-+  <Text>Go</Text>
++  Go
 +</Link>
 ```
 
@@ -256,6 +258,35 @@ export default function Button() {
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
 
 - `nextLinkProps`: extends `next/router`'s [Link props](https://nextjs.org/docs#with-link).
+
+**Known issue with `Link`**: If you don't pass it a string a child, it won't work. For now, stick to passing a string.
+
+Here's the solution for web:
+
+Note: if passing a functional component as a child of <Link> you will need to wrap it in React.forwardRef
+
+Example with React.forwardRef
+
+```es6
+import React from 'react'
+import Link from 'next/link'
+
+// `onClick`, `href`, and `ref` need to be passed to the DOM element
+// for proper handling
+const MyButton = React.forwardRef(({ onClick, href }, ref) => (
+  <a href={href} onClick={onClick} ref={ref}>
+    Click Me
+  </a>
+))
+
+export default () => (
+  <>
+    <Link href="/another">
+      <MyButton />
+    </Link>
+  </>
+)
+```
 
 ## Other shout outs
 

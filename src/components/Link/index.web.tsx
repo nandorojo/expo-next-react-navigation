@@ -11,13 +11,13 @@ export default function Link(props: LinkProps) {
   const href = useMemo(
     () => ({
       query,
-      pathname: `/${props.webRoute ?? props.routeName}`,
+      pathname: `/${props.web.path ?? props.routeName}`,
     }),
-    [props.webRoute, props.routeName, query]
+    [props.web.path, props.routeName, query]
   )
   return (
-    <NextLink passHref {...nextLinkProps} href={href}>
-      {props.children}
+    <NextLink passHref {...nextLinkProps} href={href} as={props.web.as}>
+      <a>{props.children}</a>
     </NextLink>
   )
 }

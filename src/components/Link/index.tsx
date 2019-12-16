@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react'
 import { LinkProps } from './types'
-import { TouchableOpacity } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
 import useRouting from '../../hooks/use-routing'
 
 /**
@@ -33,5 +33,9 @@ export default function Link(props: LinkProps) {
   const { children, ...navigation } = props
   const nav = useCallback(() => navigate(navigation), [navigate, navigation])
 
-  return <TouchableOpacity onPress={nav}>{children}</TouchableOpacity>
+  return (
+    <TouchableOpacity onPress={nav}>
+      <Text>{children}</Text>
+    </TouchableOpacity>
+  )
 }
