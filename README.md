@@ -38,12 +38,14 @@ Replace the following instances in your code after installation and setup:
 
 ## Installation
 
-```bash
-npm i expo-next-react-navigation
-
-// or
-
+```es6
 yarn add expo-next-react-navigation
+```
+
+or
+
+```es6
+npm i expo-next-react-navigation
 ```
 
 ## Set up
