@@ -174,58 +174,7 @@ export default function Home() {
 
 This follows the next pattern of [dynamic routing](https://nextjs.org/learn/basics/clean-urls-with-dynamic-routing). You'll need to create a `pages/user/[id].tsx` file.
 
-**Thoughts on the `web` field:**
-
-`web` can help provide cleaner urls (`user/mike` instead of `user?id=mike`).
-
-Also, navigation patterns on mobile can be different than web.
-
-For instance, imagine you have a tab navigator. Say the first tab has a nested stack navigator with an inbox screen and a chat room screen. If you navigate from a notifications tab to this tab, and a chat room screen was already open, you probably want that chat room to stay open on mobile. Only if you press the tab button a second time should it pop back to the inbox screen.
-
-This may not be the case on `web`. Web navigation patterns on web may lead you to want to open the inbox directly, instead of the open chat screen. This example could look something like this:
-
-```es6
-navigate({
-  routeName: 'inboxStack',
-  web: {
-    path: 'inbox',
-  },
-})
-```
-
-I've also considered letting the `web` field take a `dynamic` parameter like this `chat/:roomId`:
-
-```es6
-// goes to `yourdomain.com/chat/chris` and still passes `chris` as a `roomId` param
-const navigateCleanLink = () =>
-  navigate({
-    routeName: 'chat',
-    params: { roomId: 'chris' },
-    web: { dynamic: `chat/[roomId]` },
-  })
-
-// goes to yourdomain.com/chat?roomId=chris
-const onPress = () =>
-  navigate({
-    routeName: 'chat',
-    params: { roomId: 'chris' },
-  })
-```
-
-But that's not added. For now, the same is achieved by doing this:
-
-```es6
-const roomId = 'chris'
-
-const navigateToChatRoom = () =>
-  navigate({
-    routeName: 'chat',
-    params: { roomId },
-    web: { path: `chat/${roomId}` },
-  })
-```
-
-This would open the `pages/chat/[roomId].js` file, with `roomId` as a param.
+For more thoughts on how and when you should use the `web` field, see [Web Thoughts](#web-thoughts).
 
 ### `getParam`
 
@@ -344,3 +293,56 @@ class MyApp extends App {
 
 export default MyApp
 ```
+
+## Web Thoughts
+
+The `web` prop in the `navigate` function and `Link` component can help provide cleaner urls (`user/mike` instead of `user?id=mike`) on web.
+
+Also, navigation patterns on mobile can be different than web, and this field can help you account for those situations.
+
+For instance, imagine you have a tab navigator. Say the first tab has a nested stack navigator with an inbox screen and a chat room screen. If you navigate from a notifications tab to this tab, and a chat room screen was already open, you probably want that chat room to stay open on mobile. Only if you press the tab button a second time should it pop back to the inbox screen.
+
+This may not be the case on `web`. Web navigation patterns on web may lead you to want to open the inbox directly, instead of the open chat screen. This example could look something like this:
+
+```es6
+navigate({
+  routeName: 'inboxStack',
+  web: {
+    path: 'inbox',
+  },
+})
+```
+
+I've also considered letting the `web` field take a `dynamic` parameter like this `chat/:roomId`:
+
+```es6
+// goes to `yourdomain.com/chat/chris` and still passes `chris` as a `roomId` param
+const navigateCleanLink = () =>
+  navigate({
+    routeName: 'chat',
+    params: { roomId: 'chris' },
+    web: { dynamic: `chat/[roomId]` },
+  })
+
+// goes to yourdomain.com/chat?roomId=chris
+const onPress = () =>
+  navigate({
+    routeName: 'chat',
+    params: { roomId: 'chris' },
+  })
+```
+
+But that's not added. For now, the same is achieved by doing this:
+
+```es6
+const roomId = 'chris'
+
+const navigateToChatRoom = () =>
+  navigate({
+    routeName: 'chat',
+    params: { roomId },
+    web: { path: `chat/${roomId}` },
+  })
+```
+
+This would open the `pages/chat/[roomId].js` file, with `roomId` as a param.
