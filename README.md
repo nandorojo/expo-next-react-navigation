@@ -24,15 +24,13 @@ Replace the following instances in your code after installation and setup:
 
 ```diff
 -import { TouchableOpacity } from 'react-native'
--...
--<TouchableOpacity onPress={() => navigate({ routeName: 'chat' })}>
--  Press me!
-- </TouchableOpacity>
-
 +import { Link } from 'expo-next-react-navigation'
-+ ...
+
+-<TouchableOpacity onPress={() => navigate({ routeName: 'chat' })}>
+-  <Text>Go</Text>
+- </TouchableOpacity>
 +<Link routeName="chat" params={{ roomId: 'hey!' }}>
-+  Press me!
++  <Text>Go</Text>
 +</Link>
 ```
 
