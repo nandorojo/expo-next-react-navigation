@@ -109,6 +109,10 @@ Replace the following instances in your code after installation and setup:
 +</Link>
 ```
 
+All set ⚡️
+
+# API
+
 ## `useRouting`
 
 React hook that wraps `useNavigation` (from react-navigation) hook and `useRouter` (from next-router).
