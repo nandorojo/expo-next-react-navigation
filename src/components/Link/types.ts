@@ -1,8 +1,19 @@
 import { NavigateTo } from '../../hooks/use-routing/types'
 import { ComponentPropsWithoutRef } from 'react'
 import Link from 'next/link'
+import { TouchableOpacity } from 'react-native'
 
 export type LinkProps<To extends NavigateTo = NavigateTo> = To & {
-	children: React.ReactNode
-	nextLinkProps?: ComponentPropsWithoutRef<typeof Link>
+  /**
+   * Required: child component/text
+   */
+  children: React.ReactNode
+  /**
+   * Optional: props passed to next/router Link Component.
+   */
+  nextLinkProps?: ComponentPropsWithoutRef<typeof Link>
+  /**
+   * Optional: props passed to TouchableOpacity component on native.
+   */
+  touchableOpacityProps?: ComponentPropsWithoutRef<typeof TouchableOpacity>
 }

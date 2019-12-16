@@ -10,15 +10,35 @@ The only thing you'll need to "change" about your workflow from a pure RN projec
 
 ## Usage
 
-These methods provide replacements for
+Replace the following instances in your code after installation and setup:
 
+```diff
+-import { useNavigation } from 'react-navigation-hooks'
++import { useRouting } from 'expo-next-react-navigation'
 ```
 
+```diff
+-import { useLayoutEffect } from 'react-navigation-hooks'
++import { useLayoutEffect } from 'expo-next-react-navigation'
+```
+
+```diff
+-import { TouchableOpacity } from 'react-native'
+-...
+-<TouchableOpacity onPress={() => navigate({ routeName: 'home' })}>
+-  Press me!
+- </TouchableOpacity>
+
++import { Link } from 'expo-next-react-navigation'
++ ...
++<Link routeName="chat" params={{ roomId: 'hey!' }}>
++  Press me!
++</Link>
 ```
 
 ## Installation
 
-```es6
+```bash
 npm i expo-next-react-navigation
 
 // or
@@ -34,7 +54,7 @@ yarn add expo-next-react-navigation
 
 First, install these dependencies:
 
-```
+```bash
 yarn add next-compose-plugins next-fonts next-images next-transpile-modules
 ```
 
@@ -134,23 +154,55 @@ export default function Home() {
 
 This follows the next pattern of [dynamic routing](https://nextjs.org/learn/basics/clean-urls-with-dynamic-routing). You'll need to create a `pages/user/[id].tsx` file.
 
-**Thoughts on the `webRoute` field:**
+**Thoughts on the `web` field:**
 
-`webRoute` can provide cleaner urls (`user/mike` instead of `user?id=mike`).
+`web` can help provide cleaner urls (`user/mike` instead of `user?id=mike`).
 
-Alos, navigation patterns on mobile can be different than web. For instance, if one tab has a stack navigator of an inbox and a chat room, and you navigate to that tab when a chat room is open, you might not want it to pop back to the inbox screen until you tap that tab twice. On web, however, the pattern might favor going back to the inbox every time you click the inbox item from the header at the top.
+Also, navigation patterns on mobile can be different than web.
 
-I've also considered letting the `webRoute` field take a dynamic field like this `route/:param`:
+For instance, imagine you have a tab navigator, and one tab has a nested stack navigator with an inbox screen and a chat room screen. If you navigate from a notifications tab to this tab, and a chat room is already open, you probably want that chat room to stay open on mobile. Only if you press the tab button a second time will it pop back to the inbox screen.
 
+This may not be the case on `web`. Web navigation patterns on web may lead you to want to open the inbox directly, instead of the open chat screen. This example could look something like this:
+
+```es6
+navigate({
+  routeName: 'inboxStack',
+  web: {
+    path: 'inbox',
+  },
+})
 ```
-  // goes to `yourdomain.com/user/chris`
-  const navigateCleanLink = () => navigate({ routeName: 'user', params: { id: 'chris' }, webRoute: `user/:id` })
 
-  // goes to yourdomain.com/user?id=chris
-  const onPress = () => navigate({ routeName: 'user', params: { id: 'chris' } })
+I've also considered letting the `web` field take a `dynamic` parameter like this `chat/:roomId`:
+
+```es6
+// goes to `yourdomain.com/chat/chris` and still passes `chris` as a `roomId` param
+const navigateCleanLink = () =>
+  navigate({
+    routeName: 'chat',
+    params: { roomId: 'chris' },
+    web: { dynamic: `chat/:roomId` },
+  })
+
+// goes to yourdomain.com/chat?roomId=chris
+const onPress = () =>
+  navigate({
+    routeName: 'chat',
+    params: { roomId: 'chris' },
+  })
 ```
 
-But that's not added yet.
+But that's not added yet. For now, the same is achieved by doing this:
+
+```es6
+const roomId = 'chris'
+const navigateCleanLink = () =>
+  navigate({
+    routeName: 'chat',
+    params: { roomId },
+    web: { path: `chat/${roomId}` },
+  })
+```
 
 #### `getParam`
 
@@ -193,3 +245,40 @@ export default ({ userId }) => {
   return <Profile userId={userId} />
 }
 ```
+
+## `Link`
+
+The following will use the `chat` route in react navigation.
+
+However, it will use the `pages/room.tsx` file for nextjs. Also, it will show up as `domain.com/messages` in the address bar.
+
+Optionally accepts a `nextLinkProps` prop dictionary and `touchableOpacityProps` dictionary as well.
+
+```es6
+export default function Button() {
+  return (
+    <Link
+      routeName="chat"
+      params={{ roomId: '12' }}
+      web={{
+        path: '/room',
+        as: 'messages',
+      }}
+    >
+      <Text>Chat in room 12</Text>
+    </Link>
+  )
+}
+```
+
+**Required props**:
+
+- `routeName`: string, see `useRouting().navigate` docs.
+
+**Optional props**
+
+- `web`: dictionary, see `useRouting().navigate` docs.
+
+- `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
+
+- `nextLinkProps`: extends `next/router`'s [Link props](https://nextjs.org/docs#with-link).

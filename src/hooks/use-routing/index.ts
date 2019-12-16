@@ -8,6 +8,7 @@ export default function useRouting() {
 		getParam: grabParam,
 		push: pushTo,
 		goBack,
+		...navigation
 	} = useNavigation()
 
 	const navigate = useCallback(
