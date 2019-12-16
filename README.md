@@ -25,7 +25,7 @@ Replace the following instances in your code after installation and setup:
 ```diff
 -import { TouchableOpacity } from 'react-native'
 -...
--<TouchableOpacity onPress={() => navigate({ routeName: 'home' })}>
+-<TouchableOpacity onPress={() => navigate({ routeName: 'chat' })}>
 -  Press me!
 - </TouchableOpacity>
 
