@@ -1,12 +1,12 @@
 # Expo + Next.js Router + React Navigation 🥳
 
+A set of hooks that copy the the `react-navigation` API that you're already using with an Expo app, and make it work with `next/router`.
+
+## Install
+
 ```es6
 yarn add expo-next-react-navigation
 ```
-
-This library was inspired by 1) the awesome integration between `expo`/`next-js` and 2) the challenges of managing navigation across a native and web project.
-
-The idea here is to copy the `react-navigation` api that you're already using with an Expo app, and make it work with `next/router`.
 
 ## Table of contents
 
@@ -19,7 +19,7 @@ The idea here is to copy the `react-navigation` api that you're already using wi
 
 ## Set up
 
-**1. Install next with expo:**
+**Step 0. Install next with expo:**
 
 - Init: `expo init` (or `npx create-next-app`)
 
@@ -31,7 +31,7 @@ The idea here is to copy the `react-navigation` api that you're already using wi
 
 _I recommend becoming more familiar `next`'s architecture with `expo`. Follow the docs on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/) or see [this article](https://dev.to/evanbacon/next-js-expo-and-react-native-for-web-3kd9) by Evan Bacon if you're curious._
 
-**2. Edit/create next.config.js**
+**Step 1. Edit/create next.config.js**
 
 ```bash
 yarn add next-compose-plugins next-fonts next-images next-transpile-modules
@@ -289,3 +289,42 @@ export default function Button() {
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
 
 - `nextLinkProps`: extends `next/router`'s [Link props](https://nextjs.org/docs#with-link).
+
+## Other shout outs
+
+### `nextjs-progressbar`
+
+I think this is an awesome package for adding a loading progress bar to your `next` pages. It's super easy. Check it out.
+
+Link: [https://www.npmjs.com/package/nextjs-progressbar](https://www.npmjs.com/package/nextjs-progressbar)
+
+```es6
+yarn add nextjs-progressbar
+```
+
+**pages/\_app.js**
+
+```es6
+import React from 'react'
+import App from 'next/app'
+import NextNprogress from 'nextjs-progressbar'
+
+class MyApp extends App {
+  render() {
+    const { Component, pageProps } = this.props
+    return (
+      <>
+        <NextNProgress
+          color="#29D"
+          startPosition="0.3"
+          stopDelayMs="200"
+          height="3"
+        />
+        <Component {...pageProps} />
+      </>
+    )
+  }
+}
+
+export default MyApp
+```
