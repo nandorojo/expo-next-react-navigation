@@ -8,37 +8,13 @@ This library was inspired by 1) the awesome integration between `expo`/`next-js`
 
 The idea here is to copy the `react-navigation` api that you're already using with an Expo app, and make it work with `next/router`.
 
-## Usage
+## Table of contents
 
-Replace the following instances in your code after installation and setup:
-
-### `useNavigation` 👉 `useRouting`
-
-```diff
--import { useNavigation } from 'react-navigation-hooks'
-+import { useRouting } from 'expo-next-react-navigation'
-```
-
-### `useLayoutEffect`
-
-```diff
--import { useLayoutEffect } from 'react-navigation-hooks'
-+import { useLayoutEffect } from 'expo-next-react-navigation'
-```
-
-### `<TouchableOpacity />` 👉 `<Link />`
-
-```diff
--import { TouchableOpacity } from 'react-native'
-+import { Link } from 'expo-next-react-navigation'
-
--<TouchableOpacity onPress={() => navigate({ routeName: 'chat' })}>
--  <Text>Go</Text>
-- </TouchableOpacity>
-+<Link routeName="chat" params={{ roomId: 'hey!' }}>
-+  <Text>Go</Text>
-+</Link>
-```
+- Hooks
+  - `useRouting`
+  - `useFocusEffect`
+- Components
+  - `Link`
 
 ## Set up
 
@@ -52,7 +28,7 @@ Replace the following instances in your code after installation and setup:
 
 - Start: `yarn next dev`
 
-I recommend becoming more familiar `next`'s architecture with `expo` before continuting. Follow the docs on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/) or see [this article](https://dev.to/evanbacon/next-js-expo-and-react-native-for-web-3kd9) by Evan Bacon.
+I recommend becoming more familiar `next`'s architecture with `expo`. Follow the docs on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/) or see [this article](https://dev.to/evanbacon/next-js-expo-and-react-native-for-web-3kd9) by Evan Bacon if you're curious.
 
 **2. Edit/create next.config.js**
 
@@ -89,15 +65,41 @@ module.exports = withPlugins(
 
 **All done! Run `yarn next dev` & open [http://localhost:3000](http://localhost:3000)** 👻
 
+- Take a look at the [next tutorial](https://nextjs.org/learn/basics/create-dynamic-pages) for creating pages.
+
 _You can add other packages that need transpiling to the `transpileModules` array. See [this post](https://forums.expo.io/t/next-js-expo-web-syntaxerror-unexpected-token-export-with-npm-module/31127) for details._
 
-## Table of contents
+## Usage
 
-- Hooks
-  - `useRouting`
-  - `useFocusEffect`
-- Components
-  - `Link`
+Replace the following instances in your code after installation and setup:
+
+### `useNavigation` 👉 `useRouting`
+
+```diff
+-import { useNavigation } from 'react-navigation-hooks'
++import { useRouting } from 'expo-next-react-navigation'
+```
+
+### `useLayoutEffect`
+
+```diff
+-import { useLayoutEffect } from 'react-navigation-hooks'
++import { useLayoutEffect } from 'expo-next-react-navigation'
+```
+
+### `<TouchableOpacity />` 👉 `<Link />`
+
+```diff
+-import { TouchableOpacity } from 'react-native'
++import { Link } from 'expo-next-react-navigation'
+
+-<TouchableOpacity onPress={() => navigate({ routeName: 'chat' })}>
+-  <Text>Go</Text>
+- </TouchableOpacity>
++<Link routeName="chat" params={{ roomId: 'hey!' }}>
++  <Text>Go</Text>
++</Link>
+```
 
 ## `useRouting`
 
