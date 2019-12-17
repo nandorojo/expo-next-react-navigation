@@ -301,6 +301,10 @@ Link: [https://www.npmjs.com/package/nextjs-progressbar](https://www.npmjs.com/p
 
 ```es6
 yarn add nextjs-progressbar
+
+or
+
+npm i nextjs-progressbar
 ```
 
 **pages/\_app.js**
