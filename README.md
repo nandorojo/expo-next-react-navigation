@@ -127,7 +127,7 @@ import { useRouting } from 'expo-next-react-navigation`
 export default function App() {
   const { navigation, push, getParam, goBack } = useRouting()
 
-  // ...
+
 }
 ```
 
