@@ -241,7 +241,7 @@ export default function Button() {
         as: 'messages',
       }}
     >
-      <Text>Chat in room 12</Text>
+      Chat in room 12
     </Link>
   )
 }
@@ -250,6 +250,7 @@ export default function Button() {
 **Required props**:
 
 - `routeName`: string, see [`useRouting().navigate`](https://github.com/nandorojo/expo-next-react-navigation#navigate) docs.
+- `children`: string
 
 **Optional props**
 
@@ -258,8 +259,8 @@ export default function Button() {
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
 
 - `nextLinkProps`: extends `next/router`'s [Link props](https://nextjs.org/docs#with-link).
-
-**Known issue with `Link`**: If you don't pass it a string a child, it won't work. For now, stick to passing a string.
+  <!-- 
+  **Known issue with `Link`**: If you don't pass it a string a child, it won't work. For now, stick to passing a string.
 
 Here's the solution for web:
 
@@ -287,6 +288,8 @@ export default () => (
   </>
 )
 ```
+
+-->
 
 ## Other shout outs
 
