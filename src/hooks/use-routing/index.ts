@@ -30,5 +30,5 @@ export default function useRouting() {
     return value
   }
 
-  return { navigate, getParam, push, goBack }
+  return { navigate, getParam, push, goBack: () => goBack() }
 }

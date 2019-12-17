@@ -4,6 +4,8 @@ A set of hooks that wrap the `react-navigation` API that you're used to, and mak
 
 This library helps me use the [Expo + Next.js integration](https://docs.expo.io/versions/latest/guides/using-nextjs/) without stressing about navigation.
 
+_This is a new library, PRs are very welcome!_
+
 ## Example
 
 👾 [Github Repo](https://github.com/nandorojo/expo-next-react-navigation/tree/master/examples/next-nav) | 💻 [Website](https://next-nav.fernandorojo.now.sh) | 📱 [Open expo app directly](https://exp.host/@kellycup8/next-nav) | ☎️ [Expo app website](https://expo.io/@kellycup8/next-nav)
