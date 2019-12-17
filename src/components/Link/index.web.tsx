@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, CSSProperties } from 'react'
 import NextLink from 'next/link'
 import empty from '../../utils/empty'
 import { LinkProps } from './types'
@@ -18,7 +18,7 @@ export default function Link(props: LinkProps) {
   )
   return (
     <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
-      <a>{props.children}</a>
+      <a style={props.style as CSSProperties}>{props.children}</a>
     </NextLink>
   )
 }
