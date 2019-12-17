@@ -24,6 +24,8 @@ If you want to run in the browser using `next`:
 yarn next dev
 ```
 
-## Run in expo snack
+## Run in on expo
+
+Download the expo app to your phone and open this link on your phone:
 
 ## Run from hosted web browser via now

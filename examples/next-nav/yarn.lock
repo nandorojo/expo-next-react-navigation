@@ -4216,10 +4216,10 @@ expo-location@~8.0.0:
   dependencies:
     invariant "^2.2.4"
 
-expo-next-react-navigation@^0.0.14:
-  version "0.0.14"
-  resolved "https://registry.yarnpkg.com/expo-next-react-navigation/-/expo-next-react-navigation-0.0.14.tgz#e5e4874526c8c9ceb15ffad80c4aa837a14703a2"
-  integrity sha512-pXFT5DnXoegqQMTLDo4XfuGGq+HP6jYmltUBSn9FBFA0nBNEvanzuNnPtCpvqapnl+SPpnXjEq2ZDcwki45HjQ==
+expo-next-react-navigation@^0.0.16:
+  version "0.0.16"
+  resolved "https://registry.yarnpkg.com/expo-next-react-navigation/-/expo-next-react-navigation-0.0.16.tgz#80c8919692a7e79ba5c91be3ead900b6cbe0c963"
+  integrity sha512-M9a2akwIAUlq3wLQIxMnzKB6bCLcWVDS7ylAbDIlQnfJmlbIw2YPfPAwZGrjoPrYhAdW7tQdEKJXiVfvhzGAlA==
   dependencies:
     lodash "^4.17.15"
     next "^9.1.5"

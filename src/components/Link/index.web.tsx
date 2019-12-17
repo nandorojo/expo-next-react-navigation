@@ -18,7 +18,14 @@ export default function Link(props: LinkProps) {
   )
   return (
     <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
-      <a style={props.style as CSSProperties}>{props.children}</a>
+      <a
+        style={{
+          font: 'inherit',
+          ...((props.style as CSSProperties) || empty.object),
+        }}
+      >
+        {props.children}
+      </a>
     </NextLink>
   )
 }

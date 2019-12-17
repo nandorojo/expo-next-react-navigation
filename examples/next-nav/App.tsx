@@ -7,8 +7,10 @@ import { Link, useRouting } from 'expo-next-react-navigation'
 export function Home() {
   return (
     <View style={styles.container}>
-      <Text>Home Screen 🥳</Text>
-      <Link routeName="Profile">Click me to open profile :)</Link>
+      <Text style={styles.text}>Home Screen 🥳</Text>
+      <Link style={{ color: 'blue', font: 'inherit' }} routeName="Profile">
+        Click me to open profile :)
+      </Link>
     </View>
   )
 }
@@ -18,10 +20,11 @@ export function Profile() {
 
   return (
     <View style={styles.container}>
-      <Text>Profile! 🏋️‍♀️</Text>
+      <Text style={styles.text}>Profile! 🏋️‍♀️</Text>
       <Button
         text="👈 Go back"
-        onPress={() => navigate({ routeName: 'Home' })}
+        // on web, we want to go to domain.com/, so we set the path to ''
+        onPress={() => navigate({ routeName: 'Home', web: { path: '' } })}
       />
     </View>
   )
@@ -49,7 +52,10 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'lightblue',
+  },
+  text: {
+    fontSize: 20,
+    margin: 20,
   },
 })
 
@@ -59,7 +65,7 @@ function Button({ text, onPress }: { text: string; onPress?: () => void }) {
       style={{
         paddingHorizontal: 20,
         paddingVertical: 10,
-        backgroundColor: 'purple',
+        backgroundColor: 'black',
         color: 'white',
         margin: 20,
       }}
