@@ -8,12 +8,13 @@ export default function Link(props: LinkProps) {
   const query = useMemo(() => ({ ...(props.params || empty.object) }), [
     props.params,
   ])
+  const pathname = `/${props.web?.path ?? props.routeName}`
   const href = useMemo(
     () => ({
       query,
-      pathname: `/${props.web.path ?? props.routeName}`,
+      pathname,
     }),
-    [props.web.path, props.routeName, query]
+    [pathname, query]
   )
   return (
     <NextLink passHref {...nextLinkProps} href={href} as={props.web.as}>
