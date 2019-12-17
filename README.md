@@ -259,37 +259,6 @@ export default function Button() {
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
 
 - `nextLinkProps`: extends `next/router`'s [Link props](https://nextjs.org/docs#with-link).
-  <!-- 
-  **Known issue with `Link`**: If you don't pass it a string a child, it won't work. For now, stick to passing a string.
-
-Here's the solution for web:
-
-Note: if passing a functional component as a child of <Link> you will need to wrap it in React.forwardRef
-
-Example with React.forwardRef
-
-```es6
-import React from 'react'
-import Link from 'next/link'
-
-// `onClick`, `href`, and `ref` need to be passed to the DOM element
-// for proper handling
-const MyButton = React.forwardRef(({ onClick, href }, ref) => (
-  <a href={href} onClick={onClick} ref={ref}>
-    Click Me
-  </a>
-))
-
-export default () => (
-  <>
-    <Link href="/another">
-      <MyButton />
-    </Link>
-  </>
-)
-```
-
--->
 
 ## Other shout outs
 
