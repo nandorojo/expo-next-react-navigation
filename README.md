@@ -6,7 +6,7 @@ This library helps me use the [expo/next-js integration](https://docs.expo.io/ve
 
 ## Example
 
-👾 [Github Repo](https://github.com/nandorojo/expo-next-react-navigation/tree/master/examples/next-nav) | 💻 [Website](https://next-nav.fernandorojo.now.sh) | 📱 [Open expo app directly](https://exp.host/@kellycup8/next-nav) / [Expo app page](https://expo.io/@kellycup8/next-nav)
+👾 [Github Repo](https://github.com/nandorojo/expo-next-react-navigation/tree/master/examples/next-nav) | 💻 [Website](https://next-nav.fernandorojo.now.sh) | 📱 [Open expo app directly](https://exp.host/@kellycup8/next-nav) | ☎️ [Expo app website](https://expo.io/@kellycup8/next-nav)
 
 ## Install
 
