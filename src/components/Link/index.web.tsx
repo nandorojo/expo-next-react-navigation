@@ -3,6 +3,31 @@ import NextLink from 'next/link'
 import empty from '../../utils/empty'
 import { LinkProps } from './types'
 
+/**
+ * Link component for react-navigation and nextjs.
+ *
+ * @param props
+ *  - routeName: string
+ *  - params?: object
+ *  - web: `{ path?: string; as?: string }`
+ *
+ * ## Usage
+ *
+ * ```diff
+ * -import { TouchableOpacity } from 'react-native'
+ * -...
+ * -<TouchableOpacity onPress={() => navigate({ routeName: 'home' })}>
+ * -  Press me!
+ * - </TouchableOpacity>
+ *
+ * +import { Link } from 'expo-next-react-navigation'
+ * + ...
+ * +<Link routeName="Link">
+ * +  Press me!
+ * +</Link>
+ *```
+ *
+ */
 export default function Link(props: LinkProps) {
   const { nextLinkProps = empty.object } = props
   const query = useMemo(() => ({ ...(props.params || empty.object) }), [
