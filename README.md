@@ -1,8 +1,8 @@
 # Expo + Next.js Router + React Navigation 🥳
 
-A set of hooks that wrap the the `react-navigation` API that you're already using with an Expo app, and make it work with `next/router`.
+A set of hooks that wrap the `react-navigation` API that you're used to, and make it work with `next/router`.
 
-This library helps me use the [expo/next-js integration](https://docs.expo.io/versions/latest/guides/using-nextjs/) without stressing about navigation.
+This library helps me use the [Expo + Next.js integration](https://docs.expo.io/versions/latest/guides/using-nextjs/) without stressing about navigation.
 
 ## Example
 
@@ -133,7 +133,7 @@ export default function App() {
 
 ### `navigate`
 
-Only argument is a dictionary with these values
+Only argument is a dictionary with these values. Unlike `react-navigation`, this doesn't currently support a string as argument.
 
 - `routeName`: string, required
 - `params`: optional dictionary
