@@ -2,10 +2,26 @@
   "name": "expo-next-react-navigation",
   "version": "0.0.18",
   "description": "Make Next.js and react-navigation play nicely together with an Expo/React Native Web app.",
-  "main": "lib/module/index.js",
+  "sideEffects": true,
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "repository": "https://github.com/nandorojo/expo-next-react-navigation",
   "author": "Fernando Rojo",
   "license": "MIT",
+  "scripts": {
+    "build": "expo-module build",
+    "clean": "expo-module clean",
+    "test": "expo-module test",
+    "prepare": "expo-module prepare",
+    "prepublishOnly": "expo-module prepublishOnly",
+    "expo-module": "expo-module"
+  },
+  "files": [
+    "build"
+  ],
+  "jest": {
+    "preset": "jest-expo-enzyme"
+  },
   "devDependencies": {
     "@react-native-community/bob": "^0.7.0",
     "@types/lodash": "^4.14.149",
@@ -13,31 +29,21 @@
     "@types/react-native": "^0.60.25",
     "@typescript-eslint/eslint-plugin": "^2.11.0",
     "@typescript-eslint/parser": "^2.11.0",
+    "enzyme": "^3.10.0",
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.7.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^2.3.0",
-    "prettier": "^1.19.1"
-  },
-  "files": [
-    "src",
-    "lib"
-  ],
-  "@react-native-community/bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      "module",
-      "typescript"
-    ]
-  },
-  "react-native": "src/index.ts",
-  "module": "lib/module/index.js",
-  "types": "lib/typescript/index.d.ts",
-  "scripts": {
-    "prepare": "bob build",
-    "deploy": "yarn prepare && yarn publish"
+    "expo-module-scripts": "^1.1.1",
+    "jest": "^24.9.0",
+    "jest-expo": "^36.0.1",
+    "jest-expo-enzyme": "^0.0.1",
+    "prettier": "^1.19.1",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+    "react-native-web": "^0.11.7"
   },
   "dependencies": {
     "lodash": "^4.17.15",

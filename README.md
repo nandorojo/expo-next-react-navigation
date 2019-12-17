@@ -10,7 +10,7 @@ This library helps me use the [Expo + Next.js integration](https://docs.expo.io/
 
 ## Install
 
-```es6
+```sh
 yarn add expo-next-react-navigation
 ```
 

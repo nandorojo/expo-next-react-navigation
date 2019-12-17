@@ -11,7 +11,7 @@ If you're just looking around, there are only two places you need to look to see
 
 **1. Clone repo**
 
-```es6
+```sh
 git clone https://github.com/nandorojo/expo-next-react-navigation
 cd expo-next-react-navigation/examples/next-nav
 yarn
@@ -21,13 +21,13 @@ yarn
 
 If you want to run on a mobile device using `expo`:
 
-```es6
+```sh
 expo start --ios
 ```
 
 If you want to run in the browser using `next`:
 
-```es6
+```sh
 yarn next dev
 ```
 
