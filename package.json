@@ -23,26 +23,14 @@
     "preset": "jest-expo-enzyme"
   },
   "devDependencies": {
-    "@react-native-community/bob": "^0.7.0",
     "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.16",
-    "@types/react-native": "^0.60.25",
-    "@typescript-eslint/eslint-plugin": "^2.11.0",
-    "@typescript-eslint/parser": "^2.11.0",
-    "enzyme": "^3.10.0",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "eslint-plugin-react": "^7.17.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
     "expo-module-scripts": "^1.1.1",
-    "jest": "^24.9.0",
-    "jest-expo": "^36.0.1",
     "jest-expo-enzyme": "^0.0.1",
     "prettier": "^1.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-34.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
     "react-native-web": "^0.11.7"
   },
   "dependencies": {
