@@ -5,7 +5,8 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "build": "next build"
   },
   "dependencies": {
     "@expo/next-adapter": "^2.0.0-beta.9",

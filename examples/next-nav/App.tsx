@@ -4,11 +4,14 @@ import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { Link, useRouting } from 'expo-next-react-navigation'
 
+// See the pages/folder for the next.js routes
+// everything else is confined in this file :)
+
 export function Home() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Home Screen 🥳</Text>
-      <Link style={{ color: 'blue', font: 'inherit' }} routeName="Profile">
+      <Link style={{ color: 'green', fontSize: 20 }} routeName="Profile">
         Click me to open profile :)
       </Link>
     </View>
@@ -16,16 +19,12 @@ export function Home() {
 }
 
 export function Profile() {
-  const { navigate } = useRouting()
+  const { goBack } = useRouting()
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Profile! 🏋️‍♀️</Text>
-      <Button
-        text="👈 Go back"
-        // on web, we want to go to domain.com/, so we set the path to ''
-        onPress={() => navigate({ routeName: 'Home', web: { path: '' } })}
-      />
+      <Button text="👈 Go back" onPress={() => goBack()} />
     </View>
   )
 }
