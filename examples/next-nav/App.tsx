@@ -8,9 +8,7 @@ export function Home() {
   return (
     <View style={styles.container}>
       <Text>Home Screen 🥳</Text>
-      <Link routeName="Profile">
-        <Button text="Click me to open profile :)" />
-      </Link>
+      <Link routeName="Profile">Click me to open profile :)</Link>
     </View>
   )
 }
@@ -36,7 +34,15 @@ const AppNavigator = createStackNavigator({
 
 export default createAppContainer(AppNavigator)
 
-// STYLES AND BUTTON
+/**
+ *
+ *
+ *
+ *
+ *
+ *
+ * styles, button, etc
+ */
 
 const styles = StyleSheet.create({
   container: {

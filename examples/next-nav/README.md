@@ -1,11 +1,29 @@
 # `expo-next-react-navigation` example
 
-Library: https://github.com/nandorojo/expo-next-react-navigation
+## Run by cloning repo:
 
-# Run this example:
+**1. Clone repo**
 
-## Clone:
+```es6
+git clone https://github.com/nandorojo/expo-next-react-navigation
+cd expo-next-react-navigation/examples/next-nav
+yarn
+```
 
-## Expo snack:
+**2. Run app**
 
-## Now web deployement
+If you want to run on a mobile device using `expo`:
+
+```es6
+expo start --ios
+```
+
+If you want to run in the browser using `next`:
+
+```es6
+yarn next dev
+```
+
+## Run in expo snack
+
+## Run from hosted web browser via now

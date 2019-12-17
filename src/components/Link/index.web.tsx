@@ -17,7 +17,7 @@ export default function Link(props: LinkProps) {
     [pathname, query]
   )
   return (
-    <NextLink passHref {...nextLinkProps} href={href} as={props.web.as}>
+    <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
       <a>{props.children}</a>
     </NextLink>
   )
