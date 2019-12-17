@@ -31,8 +31,10 @@ If you want to run in the browser using `next`:
 yarn next dev
 ```
 
-## Run in on expo
+## Run on your phone using expo
 
 Download the expo app to your phone and open this link on your phone:
 
 ## Run from hosted web browser via now
+
+Link: [https://next-nav.fernandorojo.now.sh](https://next-nav.fernandorojo.now.sh)
