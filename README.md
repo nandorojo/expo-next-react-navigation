@@ -40,7 +40,7 @@ yarn add expo-next-react-navigation
 
 - Start: `yarn next dev`
 
-_I recommend becoming familiar `next`'s architecture with `expo`. Follow the docs on the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/) or see [this article](https://dev.to/evanbacon/next-js-expo-and-react-native-for-web-3kd9) by Evan Bacon if you're curious._
+_I recommend becoming familiar `next`'s architecture with `expo`. Follow the [Expo docs](https://docs.expo.io/versions/latest/guides/using-nextjs/) or see [this article](https://dev.to/evanbacon/next-js-expo-and-react-native-for-web-3kd9) by Evan Bacon if you're curious._
 
 **Step 1. Edit/create next.config.js**
 
