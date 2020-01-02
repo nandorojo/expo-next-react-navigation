@@ -3,12 +3,43 @@ import NextLink from 'next/link'
 import empty from '../../utils/empty'
 import { LinkProps } from './types'
 
+/**
+ * Link component for react-navigation and nextjs.
+ *
+ * @param props
+ *  - routeName: string
+ *  - params?: object
+ *  - web: `{ path?: string; as?: string }`
+ *
+ * ## Usage
+ *
+ * ```diff
+ * -import { TouchableOpacity } from 'react-native'
+ * -...
+ * -<TouchableOpacity onPress={() => navigate({ routeName: 'home' })}>
+ * -  Press me!
+ * - </TouchableOpacity>
+ *
+ * +import { Link } from 'expo-next-react-navigation'
+ * + ...
+ * +<Link routeName="home">
+ * +  Press me!
+ * +</Link>
+ *```
+ *
+ */
 export default function Link(props: LinkProps) {
-  const { nextLinkProps = empty.object } = props
-  const query = useMemo(() => ({ ...(props.params || empty.object) }), [
-    props.params,
-  ])
-  const pathname = `/${props.web?.path ?? props.routeName}`
+  const {
+    nextLinkProps = empty.object,
+    style = empty.object,
+    params = empty.object,
+    children,
+  } = props
+  const query = useMemo(() => ({ ...params }), [params])
+  const webPath =
+    props.web?.path?.[0] === '/' ? props.web?.path?.slice(1) : props.web?.path
+  const pathname = `/${webPath ?? props.routeName}`
+
   const href = useMemo(
     () => ({
       query,
@@ -21,10 +52,10 @@ export default function Link(props: LinkProps) {
       <a
         style={{
           font: 'inherit',
-          ...((props.style as CSSProperties) || empty.object),
+          ...(style as CSSProperties),
         }}
       >
-        {props.children}
+        {children}
       </a>
     </NextLink>
   )

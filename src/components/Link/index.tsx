@@ -2,6 +2,7 @@ import React, { useCallback } from 'react'
 import { LinkProps } from './types'
 import { TouchableOpacity, Text, TextStyle } from 'react-native'
 import useRouting from '../../hooks/use-routing'
+import empty from '../../utils/empty'
 
 /**
  * Link component for react-navigation and nextjs.
@@ -9,7 +10,7 @@ import useRouting from '../../hooks/use-routing'
  * @param props
  *  - routeName: string
  *  - params?: object
- *  - web: `{ path?: string; as?: string }`
+ *  - web?: `{ path?: string; as?: string }`
  *
  * ## Usage
  *
@@ -21,8 +22,8 @@ import useRouting from '../../hooks/use-routing'
  * - </TouchableOpacity>
  *
  * +import { Link } from 'expo-next-react-navigation'
- * + ...
- * +<Link routeName="Link">
+ ...
+ * +<Link routeName="home">
  * +  Press me!
  * +</Link>
  *```
@@ -30,12 +31,18 @@ import useRouting from '../../hooks/use-routing'
  */
 export default function Link(props: LinkProps) {
   const { navigate } = useRouting()
-  const { children, ...navigation } = props
+  const {
+    children,
+    nextLinkProps,
+    touchableOpacityProps = empty.object,
+    style,
+    ...navigation
+  } = props
   const nav = useCallback(() => navigate(navigation), [navigate, navigation])
 
   return (
-    <TouchableOpacity onPress={nav}>
-      <Text style={props.style as TextStyle}>{children}</Text>
+    <TouchableOpacity {...touchableOpacityProps} onPress={nav}>
+      <Text style={style as TextStyle}>{children}</Text>
     </TouchableOpacity>
   )
 }
