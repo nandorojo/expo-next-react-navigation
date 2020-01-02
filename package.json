@@ -25,7 +25,6 @@
   "devDependencies": {
     "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.16",
-    "@types/react-native": "^0.60.27",
     "expo-module-scripts": "^1.1.1",
     "jest-expo-enzyme": "^0.0.1",
     "prettier": "^1.19.1",

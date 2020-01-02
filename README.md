@@ -12,7 +12,7 @@ _This is a new library, PRs are very welcome!_
 
 ## Install
 
-```es6
+```sh
 yarn add expo-next-react-navigation
 ```
 
