@@ -10,7 +10,7 @@ import empty from '../../utils/empty'
  * @param props
  *  - routeName: string
  *  - params?: object
- *  - web: `{ path?: string; as?: string }`
+ *  - web?: `{ path?: string; as?: string }`
  *
  * ## Usage
  *
@@ -23,7 +23,7 @@ import empty from '../../utils/empty'
  *
  * +import { Link } from 'expo-next-react-navigation'
  ...
- * +<Link routeName="Link">
+ * +<Link routeName="home">
  * +  Press me!
  * +</Link>
  *```
@@ -34,17 +34,14 @@ export default function Link(props: LinkProps) {
   const {
     children,
     nextLinkProps,
-    touchableOpacityProps,
+    touchableOpacityProps = empty.object,
     style,
     ...navigation
   } = props
   const nav = useCallback(() => navigate(navigation), [navigate, navigation])
 
   return (
-    <TouchableOpacity
-      {...(touchableOpacityProps || empty.object)}
-      onPress={nav}
-    >
+    <TouchableOpacity {...touchableOpacityProps} onPress={nav}>
       <Text style={style as TextStyle}>{children}</Text>
     </TouchableOpacity>
   )
