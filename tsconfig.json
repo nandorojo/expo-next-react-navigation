@@ -18,7 +18,8 @@
     "allowSyntheticDefaultImports": true,
     "types": ["react", "react-native"],
     "skipLibCheck": true,
-    "module": "esnext"
+    "module": "esnext",
+    "noEmit": true
   },
   "include": ["src/index.ts"],
   "exclude": ["node_modules", "examples"]
