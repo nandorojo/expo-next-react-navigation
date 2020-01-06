@@ -16,5 +16,5 @@ export type LinkProps<To extends NavigateTo = NavigateTo> = To & {
    * Optional: props passed to TouchableOpacity component on native.
    */
   touchableOpacityProps?: ComponentPropsWithoutRef<typeof TouchableOpacity>
-  style?: TextStyle | CSSProperties
+  style?: TextStyle
 }
