@@ -1,4 +1,5 @@
-import React, { useMemo, CSSProperties } from 'react'
+import React, { useMemo } from 'react'
+import { Text } from 'react-native'
 import NextLink from 'next/link'
 import empty from '../../utils/empty'
 import { LinkProps } from './types'
@@ -49,14 +50,12 @@ export default function Link(props: LinkProps) {
   )
   return (
     <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
-      <a
-        style={{
-          font: 'inherit',
-          ...(style as CSSProperties),
-        }}
+      <Text
+        accessibilityRole="link"
+        style={style}
       >
         {children}
-      </a>
+      </Text>
     </NextLink>
   )
 }

@@ -42,7 +42,7 @@ export default function Link(props: LinkProps) {
 
   return (
     <TouchableOpacity {...touchableOpacityProps} onPress={nav}>
-      <Text style={style as TextStyle}>{children}</Text>
+      <Text style={style as TextStyle} accessibilityRole="link">{children}</Text>
     </TouchableOpacity>
   )
 }
