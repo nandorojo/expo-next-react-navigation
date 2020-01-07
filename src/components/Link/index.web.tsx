@@ -29,7 +29,7 @@ import { LinkProps } from './types'
  *```
  *
  */
-export default function Link(props: LinkProps) {
+const Link = React.forwardRef((props: LinkProps, ref) => {
   const {
     nextLinkProps = empty.object,
     style = empty.object,
@@ -51,6 +51,7 @@ export default function Link(props: LinkProps) {
   return (
     <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
       <Text
+        ref={ref}
         accessibilityRole="link"
         style={style}
       >
@@ -58,4 +59,6 @@ export default function Link(props: LinkProps) {
       </Text>
     </NextLink>
   )
-}
+})
+
+export default Link;
