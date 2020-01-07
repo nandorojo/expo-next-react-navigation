@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react'
+import React, { useCallback, RefObject, ClassAttributes } from 'react'
 import { LinkProps } from './types'
 import { TouchableOpacity, Text } from 'react-native'
 import useRouting from '../../hooks/use-routing'
@@ -29,7 +29,7 @@ import empty from '../../utils/empty'
  *```
  *
  */
-const Link = React.forwardRef((props: LinkProps, ref) => {
+const Link = React.forwardRef((props: LinkProps, ref?: ClassAttributes<Text>['ref']) => {
   const { navigate } = useRouting()
   const {
     children,
