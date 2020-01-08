@@ -13,7 +13,7 @@ export default function useRouting() {
   const navigate = useCallback(
     <To extends NavigateTo = NavigateTo>(route: To) => {
       nav({
-        routeName: route.routeName,
+        routeName: route.routeName || '/',
         params: route.params,
       })
     },
@@ -21,7 +21,7 @@ export default function useRouting() {
   )
   const push = useCallback(
     (route: NavigateTo) => {
-      pushTo(route)
+      pushTo({ ...route, routeName: route.routeName || '/' })
     },
     [pushTo]
   )
