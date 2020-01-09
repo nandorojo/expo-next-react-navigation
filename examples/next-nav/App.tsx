@@ -30,7 +30,7 @@ export function Profile() {
 }
 
 const AppNavigator = createStackNavigator({
-  Home,
+  '/': Home,
   Profile,
 })
 

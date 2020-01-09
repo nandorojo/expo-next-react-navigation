@@ -38,7 +38,7 @@ const Link = React.forwardRef((props: LinkProps, ref?: ClassAttributes<Text>['re
     style,
     ...navigation
   } = props
-  const nav = useCallback(() => navigate(navigation), [navigate, navigation])
+  const nav = useCallback(() => navigate({ ...navigation, routeName: navigation.routeName || '/' }), [navigate, navigation])
 
   return (
     <TouchableOpacity {...touchableOpacityProps} onPress={nav}>
