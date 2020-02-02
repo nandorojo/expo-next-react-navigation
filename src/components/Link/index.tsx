@@ -1,52 +1,28 @@
-import React, { useCallback, RefObject, ClassAttributes } from 'react'
-import { LinkProps } from './types'
-import { TouchableOpacity, Text } from 'react-native'
-import useRouting from '../../hooks/use-routing'
-import empty from '../../utils/empty'
+import * as React from 'react'
+import { Text } from 'react-native'
+import { Link as NextLink } from 'next/router'
+import { LinkMaker, LinkProps } from 'expo-navigation-core'
 
-/**
- * Link component for react-navigation and nextjs.
- *
- * @param props
- *  - routeName: string
- *  - params?: object
- *  - web?: `{ path?: string; as?: string }`
- *
- * ## Usage
- *
- * ```diff
- * -import { TouchableOpacity } from 'react-native'
- * -...
- * -<TouchableOpacity onPress={() => navigate({ routeName: 'home' })}>
- * -  Press me!
- * - </TouchableOpacity>
- *
- * +import { Link } from 'expo-next-react-navigation'
- ...
- * +<Link routeName="home">
- * +  Press me!
- * +</Link>
- *```
- *
- */
-const Link = React.forwardRef((props: LinkProps, ref?: ClassAttributes<Text>['ref']) => {
-  const { navigate } = useRouting()
-  const {
-    children,
-    nextLinkProps,
-    touchableOpacityProps = empty.object,
-    style,
-    ...navigation
-  } = props
-  const nav = useCallback(() => navigate({ ...navigation, routeName: navigation.routeName || '/' }), [navigate, navigation])
+type NextProps = {
+  nextLinkProps?: React.ComponentPropsWithoutRef<typeof NextLink>
+}
+type Web = {
+  /**
+   * Alternative path to override routeName on web.
+   */
+  path?: string
+  /**
+   * A custom URL ending to show in the browser address bar instead of the `web.path` or `routeName`.
+   *
+   * Should start with `/`.
+   */
+  as?: string
+}
 
-  return (
-    <TouchableOpacity {...touchableOpacityProps} onPress={nav}>
-      <Text ref={ref} style={style} accessibilityRole="link">
-        {children}
-      </Text>
-    </TouchableOpacity>
-  )
+export default React.forwardRef<Text, LinkProps<NextProps, Web>>(function Link(
+  props,
+  ref
+) {
+  const L = LinkMaker<NextProps, Web>()
+  return <L {...props} ref={ref} />
 })
-
-export default Link;

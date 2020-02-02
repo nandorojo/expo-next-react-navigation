@@ -34,8 +34,8 @@
     "react-native-web": "^0.11.7"
   },
   "dependencies": {
+    "expo-navigation-core": "^0.2.0",
     "lodash": "^4.17.15",
-    "next": "^9.1.5",
-    "react-navigation-hooks": "^1.1.0"
+    "next": "^9.1.5"
   }
 }
