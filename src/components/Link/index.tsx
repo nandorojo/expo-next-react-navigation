@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Text } from 'react-native'
-import { Link as NextLink } from 'next/router'
+import NextLink from 'next/link'
 import { LinkMaker, LinkProps } from 'expo-navigation-core'
 
 type NextProps = {
@@ -19,10 +19,9 @@ type Web = {
   as?: string
 }
 
-export default React.forwardRef<Text, LinkProps<NextProps, Web>>(function Link(
-  props,
-  ref
-) {
+const Link = React.forwardRef<Text, LinkProps<NextProps, Web>>((props, ref) => {
   const L = LinkMaker<NextProps, Web>()
   return <L {...props} ref={ref} />
 })
+
+export default Link
