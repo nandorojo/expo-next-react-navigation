@@ -16,6 +16,11 @@ _This is a new library, PRs are very welcome!_
 yarn add expo-next-react-navigation
 ```
 
+For `react-navigation` v5:
+```sh
+yarn add expo-next-react-navigation
+```
+
 ## Table of contents
 
 - [Set up](#set-up)
