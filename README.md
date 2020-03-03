@@ -18,7 +18,7 @@ yarn add expo-next-react-navigation
 
 For `react-navigation` v5:
 ```sh
-yarn add expo-next-react-navigation
+yarn add expo-next-react-navigation@v5
 ```
 
 ## Table of contents
