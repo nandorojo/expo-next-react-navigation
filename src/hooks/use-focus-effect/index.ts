@@ -1,1 +1,1 @@
-export { useFocusEffect as default } from 'react-navigation-hooks'
+export { useFocusEffect as default } from 'expo-navigation-core'

@@ -2,7 +2,23 @@ import React, { useMemo, ClassAttributes } from 'react'
 import { Text } from 'react-native'
 import NextLink from 'next/link'
 import empty from '../../utils/empty'
-import { LinkProps } from './types'
+import { LinkProps } from 'expo-navigation-core'
+
+type NextProps = {
+  nextLinkProps?: React.ComponentPropsWithoutRef<typeof NextLink>
+}
+type Web = {
+  /**
+   * Alternative path to override routeName on web.
+   */
+  path?: string
+  /**
+   * A custom URL ending to show in the browser address bar instead of the `web.path` or `routeName`.
+   *
+   * Should start with `/`.
+   */
+  as?: string
+}
 
 /**
  * Link component for react-navigation and nextjs.
@@ -10,7 +26,7 @@ import { LinkProps } from './types'
  * @param props
  *  - routeName: string
  *  - params?: object
- *  - web: `{ path?: string; as?: string }`
+ *  - web?: `{ path?: string; as?: string }`
  *
  * ## Usage
  *
@@ -29,34 +45,32 @@ import { LinkProps } from './types'
  *```
  *
  */
-const Link = React.forwardRef(
-  (props: LinkProps, ref?: ClassAttributes<Text>['ref']) => {
-    const {
-      nextLinkProps = empty.object,
-      style = empty.object,
-      params = empty.object,
-      children,
-    } = props
-    const query = useMemo(() => ({ ...params }), [params])
-    const webPath =
-      props.web?.path?.[0] === '/' ? props.web?.path?.slice(1) : props.web?.path
-    const pathname = `/${webPath ?? props.routeName}`
+const Link = React.forwardRef<Text, LinkProps<NextProps, Web>>((props, ref) => {
+  const {
+    nextLinkProps = empty.object,
+    style = empty.object,
+    params = empty.object,
+    children,
+  } = props
+  const query = useMemo(() => ({ ...params }), [params])
+  const webPath =
+    props.web?.path?.[0] === '/' ? props.web?.path?.slice(1) : props.web?.path
+  const pathname = `/${webPath ?? props.routeName}`
 
-    const href = useMemo(
-      () => ({
-        query,
-        pathname,
-      }),
-      [pathname, query]
-    )
-    return (
-      <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
-        <Text ref={ref} accessibilityRole="link" style={style}>
-          {children}
-        </Text>
-      </NextLink>
-    )
-  }
-)
+  const href = useMemo(
+    () => ({
+      query,
+      pathname,
+    }),
+    [pathname, query]
+  )
+  return (
+    <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
+      <Text ref={ref} accessibilityRole="link" style={style}>
+        {children}
+      </Text>
+    </NextLink>
+  )
+})
 
 export default Link
