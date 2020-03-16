@@ -16,7 +16,11 @@ _This is a new library, PRs are very welcome!_
 yarn add expo-next-react-navigation
 ```
 
-For `react-navigation` v5:
+React navigation v4 is supported up to v0.0.24.
+
+**For `react-navigation` v5:**
+
+Version 1.x supports v5.
 
 ```sh
 yarn add expo-next-react-navigation@v5
