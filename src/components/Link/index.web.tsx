@@ -8,9 +8,10 @@ import { LinkProps } from './types'
  * Link component for react-navigation and nextjs.
  *
  * @param props
- *  - routeName: string
- *  - params?: object
- *  - web: `{ path?: string; as?: string }`
+ * @param props.routeName: `string`
+ * @param props.params?: `object`
+ * @param props.web?: `{ path?: string; as?: string }`
+ * @param props.isText?: `boolean`
  *
  * ## Usage
  *
@@ -36,6 +37,7 @@ const Link = React.forwardRef(
       style = empty.object,
       params = empty.object,
       children,
+      isText = true,
     } = props
     const query = useMemo(() => ({ ...params }), [params])
     const webPath =
@@ -49,11 +51,21 @@ const Link = React.forwardRef(
       }),
       [pathname, query]
     )
+
+    const renderTextOrChildren = () => {
+      if (isText) {
+        return (
+          <Text ref={ref} accessibilityRole="link" style={style}>
+            {children}
+          </Text>
+        )
+      }
+      return children
+    }
+
     return (
       <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
-        <Text ref={ref} accessibilityRole="link" style={style}>
-          {children}
-        </Text>
+        {renderTextOrChildren()}
       </NextLink>
     )
   }

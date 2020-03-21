@@ -29,24 +29,38 @@ import empty from '../../utils/empty'
  *```
  *
  */
-const Link = React.forwardRef((props: LinkProps, ref?: ClassAttributes<Text>['ref']) => {
-  const { navigate } = useRouting()
-  const {
-    children,
-    nextLinkProps,
-    touchableOpacityProps = empty.object,
-    style,
-    ...navigation
-  } = props
-  const nav = useCallback(() => navigate({ ...navigation, routeName: navigation.routeName || '/' }), [navigate, navigation])
+const Link = React.forwardRef(
+  (props: LinkProps, ref?: ClassAttributes<Text>['ref']) => {
+    const { navigate } = useRouting()
+    const {
+      children,
+      nextLinkProps,
+      touchableOpacityProps = empty.object,
+      style,
+      isText = true,
+      ...navigation
+    } = props
+    const nav = useCallback(
+      () => navigate({ ...navigation, routeName: navigation.routeName || '/' }),
+      [navigate, navigation]
+    )
+    const renderTextOrChildren = () => {
+      if (isText) {
+        return (
+          <Text ref={ref} accessibilityRole="link" style={style}>
+            {children}
+          </Text>
+        )
+      }
+      return children
+    }
 
-  return (
-    <TouchableOpacity {...touchableOpacityProps} onPress={nav}>
-      <Text ref={ref} style={style} accessibilityRole="link">
-        {children}
-      </Text>
-    </TouchableOpacity>
-  )
-})
+    return (
+      <TouchableOpacity {...touchableOpacityProps} onPress={nav}>
+        {renderTextOrChildren()}
+      </TouchableOpacity>
+    )
+  }
+)
 
-export default Link;
+export default Link
