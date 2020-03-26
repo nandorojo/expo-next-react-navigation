@@ -271,6 +271,7 @@ export default function Button() {
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
 
 - `nextLinkProps`: extends `next/router`'s [Link props](https://nextjs.org/docs#with-link).
+- `isText`: if false, you can set the children to be non-Text nodes. Defaults to `true`. If `true`, the children can be a string **or** a `Text` node.
 
 ## Other shout outs
 
