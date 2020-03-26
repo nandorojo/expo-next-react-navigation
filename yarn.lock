@@ -3885,10 +3885,10 @@ expo-module-scripts@^1.1.1:
     ts-jest "~24.0.2"
     typescript "^3.4.3"
 
-expo-navigation-core@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/expo-navigation-core/-/expo-navigation-core-0.2.0.tgz#642cde445ef4aca2cbd48f946b1539173703e773"
-  integrity sha512-iuU1qInD8TUb/NMGToPZ5jJOrhj0eFznvJd7lTG0Bvp1MMsa7T8zpV/+PV0D3U9BJZK5zBe7FMaCIRlYxfTZpw==
+expo-navigation-core@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/expo-navigation-core/-/expo-navigation-core-0.3.1.tgz#804ad8b7086f5b41367baa787f63bec2d18c3774"
+  integrity sha512-X63mqomL1bINHRCQAM4sMivjzng2vW/HizQEJum+Km9tpDm5EfczcMCNyH467okmBOOLjizqNZrHmZlREAV2Ag==
   dependencies:
     "@react-navigation/native" "^5.0.0-alpha.29"
     lodash "^4.17.15"
