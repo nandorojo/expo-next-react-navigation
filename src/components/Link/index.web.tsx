@@ -48,13 +48,14 @@ type Web = {
 const Link = React.forwardRef<Text, LinkProps<NextProps, Web>>((props, ref) => {
   const {
     nextLinkProps = empty.object,
-    style = empty.object,
+    style,
     params = empty.object,
     children,
+    isText = true,
+    web,
   } = props
   const query = useMemo(() => ({ ...params }), [params])
-  const webPath =
-    props.web?.path?.[0] === '/' ? props.web?.path?.slice(1) : props.web?.path
+  const webPath = web?.path?.[0] === '/' ? web?.path?.slice(1) : web?.path
   const pathname = `/${webPath ?? props.routeName}`
 
   const href = useMemo(
@@ -65,10 +66,14 @@ const Link = React.forwardRef<Text, LinkProps<NextProps, Web>>((props, ref) => {
     [pathname, query]
   )
   return (
-    <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
-      <Text ref={ref} accessibilityRole="link" style={style}>
-        {children}
-      </Text>
+    <NextLink passHref {...nextLinkProps} href={href} as={web?.as}>
+      {isText ? (
+        <Text ref={ref} accessibilityRole="link" style={style}>
+          {children}
+        </Text>
+      ) : (
+        children
+      )}
     </NextLink>
   )
 })
