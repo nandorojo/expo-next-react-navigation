@@ -12,7 +12,7 @@
     "@expo/next-adapter": "^2.0.0-beta.9",
     "expo": "~36.0.0",
     "expo-next-react-navigation": "^0.0.16",
-    "next": "^9.1.5",
+    "next": "^9.3.2",
     "next-compose-plugins": "^2.2.0",
     "next-fonts": "^0.19.0",
     "next-images": "^1.2.0",
