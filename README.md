@@ -266,7 +266,7 @@ export default function Button() {
 
 **Optional props**
 
-- `web`: dictionary, see [`useRouting().navigate`](https://github.com/nandorojo/expo-next-react-navigation#navigate) docs.
+- `web`: dictionary, see [`useRouting().navigate`](#navigate) docs. On `v1.0.5`+, you can also pass the `prefetch`, `replace`, and `scroll` booleans here, from the `next/link` [component](https://nextjs.org/docs/api-reference/next/link).
 
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
 
