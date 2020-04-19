@@ -1,20 +1,49 @@
-import { NavigateTo } from '../../hooks/use-routing/types'
-import { ComponentPropsWithoutRef, CSSProperties } from 'react'
+// import { NavigateTo } from '../../hooks/use-routing/types'
+// import { ComponentPropsWithoutRef, CSSProperties } from 'react'
 import Link from 'next/link'
-import { TouchableOpacity, TextStyle, ViewStyle } from 'react-native'
+// import { TouchableOpacity, TextStyle, ViewStyle } from 'react-native'
 
-export type LinkProps<To extends NavigateTo = NavigateTo> = To & {
+// export type LinkProps<To extends NavigateTo = NavigateTo> = To & {
+//   /**
+//    * Required: child component/text
+//    */
+//   children: React.ReactNode
+//   /**
+//    * Optional: props passed to next/router Link Component.
+//    */
+//   nextLinkProps?: ComponentPropsWithoutRef<typeof Link>
+//   /**
+//    * Optional: props passed to TouchableOpacity component on native.
+//    */
+//   touchableOpacityProps?: ComponentPropsWithoutRef<typeof TouchableOpacity>
+//   style?: TextStyle | ViewStyle
+// }
+
+export type NextProps = {
+  nextLinkProps?: React.ComponentPropsWithoutRef<typeof Link>
+}
+export type Web = {
   /**
-   * Required: child component/text
+   * Alternative path to override routeName on web.
    */
-  children: React.ReactNode
+  path?: string
   /**
-   * Optional: props passed to next/router Link Component.
+   * A custom URL ending to show in the browser address bar instead of the `web.path` or `routeName`.
+   *
+   * Should start with `/`.
    */
-  nextLinkProps?: ComponentPropsWithoutRef<typeof Link>
+  as?: string
   /**
-   * Optional: props passed to TouchableOpacity component on native.
+   * Prefetch the page in the background. Defaults to `true`
    */
-  touchableOpacityProps?: ComponentPropsWithoutRef<typeof TouchableOpacity>
-  style?: TextStyle | ViewStyle
+  prefetch?: boolean
+  /**
+   * Scroll to the top of the page after a navigation. Defaults to `true`
+   *
+   */
+  scroll?: boolean
+  /**
+   * Replace the current history state instead of adding a new url into the stack. Defaults to `false`
+   */
+  replace?: boolean
 }

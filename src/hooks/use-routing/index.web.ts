@@ -49,5 +49,6 @@ export default function useRouting() {
     navigate,
     push: navigate,
     goBack,
+    prefetch: router.prefetch,
   }
 }
