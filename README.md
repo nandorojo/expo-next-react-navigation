@@ -16,7 +16,7 @@ _This is a new library, PRs are very welcome!_
 yarn add expo-next-react-navigation
 ```
 
-React navigation v4 is supported up to v0.0.24.
+React navigation v4 is supported up to v0.0.25.
 
 **For `react-navigation` v5:**
 
@@ -271,6 +271,7 @@ export default function Button() {
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
 
 - `nextLinkProps`: extends `next/router`'s [Link props](https://nextjs.org/docs#with-link).
+- `isText`: if false, you can set the children to be non-Text nodes. Defaults to `true`. If `true`, the children can be a string **or** a `Text` node.
 
 ## Other shout outs
 
