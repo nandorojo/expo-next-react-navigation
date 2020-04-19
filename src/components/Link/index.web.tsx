@@ -1,5 +1,5 @@
 import React, { useMemo, ClassAttributes } from 'react'
-import { Text } from 'react-native'
+import { Text, View } from 'react-native'
 import NextLink from 'next/link'
 import empty from '../../utils/empty'
 import { LinkProps } from './types'
@@ -52,20 +52,17 @@ const Link = React.forwardRef(
       [pathname, query]
     )
 
-    const renderTextOrChildren = () => {
-      if (isText) {
-        return (
+    return (
+      <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
+        {isText ? (
           <Text ref={ref} accessibilityRole="link" style={style}>
             {children}
           </Text>
-        )
-      }
-      return children
-    }
-
-    return (
-      <NextLink passHref {...nextLinkProps} href={href} as={props.web?.as}>
-        {renderTextOrChildren()}
+        ) : (
+          <View ref={ref} accessibilityRole="link" style={style}>
+            {children}
+          </View>
+        )}
       </NextLink>
     )
   }
