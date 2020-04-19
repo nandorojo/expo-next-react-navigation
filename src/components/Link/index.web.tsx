@@ -1,5 +1,5 @@
 import React, { useMemo, ClassAttributes } from 'react'
-import { Text } from 'react-native'
+import { Text, View, ViewStyle, TextStyle } from 'react-native'
 import NextLink from 'next/link'
 import empty from '../../utils/empty'
 import { LinkProps } from 'expo-navigation-core'
@@ -68,11 +68,13 @@ const Link = React.forwardRef<Text, LinkProps<NextProps, Web>>((props, ref) => {
   return (
     <NextLink passHref {...nextLinkProps} href={href} as={web?.as}>
       {isText ? (
-        <Text ref={ref} accessibilityRole="link" style={style}>
+        <Text ref={ref} accessibilityRole="link" style={style as TextStyle}>
           {children}
         </Text>
       ) : (
-        children
+        <View accessibilityRole="link" style={style as ViewStyle}>
+          {children}
+        </View>
       )}
     </NextLink>
   )

@@ -25,12 +25,13 @@
   "devDependencies": {
     "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.16",
+    "@types/react-native": "^0.62.2",
     "expo-module-scripts": "^1.1.1",
     "jest-expo-enzyme": "^0.0.1",
     "prettier": "^1.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-37.0.1.tar.gz",
     "react-native-web": "^0.11.7"
   },
   "dependencies": {
