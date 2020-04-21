@@ -5,6 +5,7 @@ import { NavigateTo } from './types'
 import empty from '../../utils/empty'
 
 const goBack = () => Router.back()
+const popToTop = () => {}
 
 export default function useRouting() {
   const router = useRouter()
@@ -18,9 +19,9 @@ export default function useRouting() {
     }
 
     const val: Param = _.get(router.query, param) ?? fallback
-    if (val === undefined) {
-      console.warn('Tried to get param', param, 'but it does not exist')
-    }
+    // if (val === undefined) {
+    //   console.warn('Tried to get param', param, 'but it does not exist')
+    // }
     return val
   }
 
@@ -49,6 +50,7 @@ export default function useRouting() {
     navigate,
     push: navigate,
     goBack,
+    popToTop,
     prefetch: router.prefetch,
   }
 }
