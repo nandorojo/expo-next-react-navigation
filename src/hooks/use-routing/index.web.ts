@@ -3,11 +3,19 @@ import _ from 'lodash'
 import Router, { useRouter } from 'next/router'
 import { NavigateTo } from './types'
 import empty from '../../utils/empty'
+import {
+  DefaultRouteProp,
+  DefaultNavigationProp,
+} from 'expo-navigation-core/build/hooks/use-routing/types'
 
 const goBack = () => Router.back()
 const popToTop = () => {}
+const setParams = <R = {}>(a: R) => {}
 
-export default function useRouting() {
+export default function useRouting<
+  RProp extends DefaultRouteProp = DefaultRouteProp,
+  NProp extends DefaultNavigationProp = DefaultNavigationProp
+>() {
   const router = useRouter()
 
   const getParam = <Param>(
@@ -44,6 +52,25 @@ export default function useRouting() {
     },
     []
   )
+  const replace = useCallback(
+    <To extends NavigateTo = NavigateTo>({
+      routeName,
+      web,
+      params = empty.object,
+    }: To) => {
+      const webPath = web?.path?.[0] === '/' ? web?.path?.slice(1) : web?.path
+      const pathname = `/${webPath ?? routeName}`
+
+      Router.replace(
+        {
+          pathname,
+          query: { ...params },
+        },
+        web?.as
+      )
+    },
+    []
+  )
 
   return {
     getParam,
@@ -52,5 +79,7 @@ export default function useRouting() {
     goBack,
     popToTop,
     prefetch: router.prefetch,
+    replace,
+    setParams,
   }
 }
