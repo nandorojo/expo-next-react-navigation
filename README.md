@@ -61,24 +61,19 @@ yarn add next-compose-plugins next-fonts next-images next-transpile-modules
 **Step 2: edit `next.config.js` to look something like this:**
 
 ```es6
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { withExpo } = require('@expo/next-adapter')
 const withFonts = require('next-fonts')
 const withImages = require('next-images')
-const withTM = require('next-transpile-modules')
 const withPlugins = require('next-compose-plugins')
 
+const withTM = require('next-transpile-modules')([
+  'expo-next-react-navigation',
+  // you can add other modules that need traspiling here
+])
+
 module.exports = withPlugins(
-  [
-    [
-      withTM,
-      {
-        transpileModules: ['expo-next-react-navigation'],
-      },
-    ],
-    withFonts,
-    withImages,
-    [withExpo, { projectRoot: __dirname }],
-  ],
+  [withTM, withFonts, withImages, [withExpo, { projectRoot: __dirname }]],
   {
     // ...
   }
