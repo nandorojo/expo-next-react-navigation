@@ -26,6 +26,8 @@ Version 1.x supports v5.
 yarn add expo-next-react-navigation@v5
 ```
 
+I'm probably going to stop releasing new versions for `v4`, and `v5` will soon be upgraded to the `latest` tag.
+
 ## Table of contents
 
 - [Set up](#set-up)
