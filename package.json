@@ -1,6 +1,6 @@
 {
   "name": "expo-next-react-navigation",
-  "version": "1.1.9",
+  "version": "1.1.10",
   "description": "Make Next.js and react-navigation play nicely together with an Expo/React Native Web app.",
   "sideEffects": true,
   "main": "build/index.js",
@@ -36,7 +36,7 @@
     "react-native-web": "^0.11.7"
   },
   "dependencies": {
-    "expo-navigation-core": "^0.3.8",
+    "expo-navigation-core": "^0.3.9",
     "lodash.get": "^4.4.2",
     "next": "^9.1.5"
   }
