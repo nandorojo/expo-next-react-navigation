@@ -46,4 +46,8 @@ export type Web = {
    * Replace the current history state instead of adding a new url into the stack. Defaults to `false`
    */
   replace?: boolean
+  /**
+   * Update the path of the current page without rerunning getStaticProps, getServerSideProps or getInitialProps. Defaults to false
+   */
+  shallow?: boolean
 }

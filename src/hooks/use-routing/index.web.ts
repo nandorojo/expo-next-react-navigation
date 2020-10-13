@@ -64,7 +64,10 @@ export default function useRouting<
           pathname,
           query: { ...params },
         },
-        web?.as
+        web?.as,
+        {
+          shallow: web?.shallow,
+        }
       )
     },
     []
@@ -95,10 +98,10 @@ export default function useRouting<
     push: navigate,
     goBack,
     popToTop,
-    prefetch: router.prefetch,
+    prefetch: router?.prefetch,
     replace,
     setParams,
     canGoBack,
-    pathname: router.pathname,
+    pathname: router?.pathname,
   }
 }

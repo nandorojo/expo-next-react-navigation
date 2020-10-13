@@ -29,6 +29,7 @@
     "@types/react-native": "^0.62.2",
     "expo-module-scripts": "^1.1.1",
     "jest-expo-enzyme": "^0.0.1",
+    "next": "^9.5.5",
     "prettier": "^1.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
@@ -36,8 +37,7 @@
     "react-native-web": "^0.11.7"
   },
   "dependencies": {
-    "expo-navigation-core": "^0.3.9",
-    "lodash.get": "^4.4.2",
-    "next": "^9.1.5"
+    "expo-navigation-core": "^0.3.10",
+    "lodash.get": "^4.4.2"
   }
 }

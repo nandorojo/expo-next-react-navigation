@@ -50,6 +50,7 @@ type GenericRoute = {
      * Should start with `/`.
      */
     as?: string
+    shallow?: boolean
   }
 }
 

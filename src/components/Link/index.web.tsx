@@ -31,7 +31,7 @@ import { NextProps, Web } from './types'
  *
  */
 const Link = React.forwardRef<Text | View, LinkProps<NextProps, Web>>(
-  (props, ref) => {
+  function Link(props, ref) {
     const {
       nextLinkProps = empty.object,
       style,
@@ -60,6 +60,7 @@ const Link = React.forwardRef<Text | View, LinkProps<NextProps, Web>>(
         prefetch={web?.prefetch}
         scroll={web?.scroll}
         replace={web?.replace}
+        shallow={web?.shallow}
       >
         {isText ? (
           <Text ref={ref} accessibilityRole="link" style={style as TextStyle}>
