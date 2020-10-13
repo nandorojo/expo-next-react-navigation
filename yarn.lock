@@ -1445,10 +1445,17 @@
   dependencies:
     jest-diff "^24.3.0"
 
-"@types/lodash@^4.14.149":
-  version "4.14.149"
-  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.149.tgz#1342d63d948c6062838fbf961012f74d4e638440"
-  integrity sha512-ijGqzZt/b7BfzcK9vTrS6MFljQRPn5BFWOx8oE0GYxribu6uV+aA9zZuXI1zc/etK9E8nrgdoF2+LgUw7+9tJQ==
+"@types/lodash.get@^4.4.6":
+  version "4.4.6"
+  resolved "https://registry.yarnpkg.com/@types/lodash.get/-/lodash.get-4.4.6.tgz#0c7ac56243dae0f9f09ab6f75b29471e2e777240"
+  integrity sha512-E6zzjR3GtNig8UJG/yodBeJeIOtgPkMgsLjDU3CbgCAPC++vJ0eCMnJhVpRZb/ENqEFlov1+3K9TKtY4UdWKtQ==
+  dependencies:
+    "@types/lodash" "*"
+
+"@types/lodash@*", "@types/lodash@^4.14.162":
+  version "4.14.162"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.162.tgz#65d78c397e0d883f44afbf1f7ba9867022411470"
+  integrity sha512-alvcho1kRUnnD1Gcl4J+hK0eencvzq9rmzvFPRmP5rPHx9VVsJj6bKLTATPVf9ktgv4ujzh7T+XWKp+jhuODig==
 
 "@types/node@*":
   version "12.12.17"
@@ -3900,13 +3907,13 @@ expo-module-scripts@^1.1.1:
     ts-jest "~24.0.2"
     typescript "^3.4.3"
 
-expo-navigation-core@^0.3.5:
-  version "0.3.5"
-  resolved "https://registry.yarnpkg.com/expo-navigation-core/-/expo-navigation-core-0.3.5.tgz#e237c5ab8e5697b011fbea0e9a323b78e75c63ef"
-  integrity sha512-+Xrxu1AwrG9Ez974em5lsInHMlaGm93ytha9q5++tmMOg4hq57QuCkVR6OMQbDj5U7oCPjHuhfnFov7YjMfmhg==
+expo-navigation-core@^0.3.7:
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/expo-navigation-core/-/expo-navigation-core-0.3.7.tgz#c0bc36303787d321302f4da3516a9c065891e441"
+  integrity sha512-pVKKpD1xwKmIcJLsB4hQuO+VXES8Xioo8CrQm0OCGahQmkZxZWvgEHCaWxDeTdt5BgEWdkGlkAofMWxfu33kRA==
   dependencies:
     "@react-navigation/native" "^5.0.0-alpha.29"
-    lodash "^4.17.15"
+    lodash.get "^4.4.2"
 
 extend-shallow@^1.1.2:
   version "1.1.4"
@@ -5886,6 +5893,11 @@ lodash.flattendeep@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
   integrity sha1-+wMJF/hqMTTlvJvsDWngAT3f7bI=
+
+lodash.get@^4.4.2:
+  version "4.4.2"
+  resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+  integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
 
 lodash.isarguments@^3.0.0:
   version "3.1.0"

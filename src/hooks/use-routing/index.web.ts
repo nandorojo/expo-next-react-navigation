@@ -1,5 +1,5 @@
-import { useCallback } from 'react'
-import _ from 'lodash'
+import { useCallback, useEffect, useRef } from 'react'
+import get from 'lodash.get'
 import Router, { useRouter } from 'next/router'
 import { NavigateTo } from './types'
 import empty from '../../utils/empty'
@@ -18,15 +18,32 @@ export default function useRouting<
 >() {
   const router = useRouter()
 
+  // implement a pseudo "can go back" by tracking if we've navigated
+  // TODO add it to a global provider to share it everywhere.
+  const hasNavigated = useRef(false)
+  const canGoBack = useRef(() => {
+    return hasNavigated.current
+  }).current
+
+  useEffect(() => {
+    const onRouteChange = () => {
+      hasNavigated.current = true
+    }
+    Router.events.on('routeChangeComplete', onRouteChange)
+    return () => {
+      Router.events.off('routeChangeComplete', onRouteChange)
+    }
+  }, [])
+
   const getParam = <Param>(
-    param: Parameters<typeof _.get>['1'],
+    param: Parameters<typeof get>['1'],
     fallback?: unknown
   ): Param | undefined => {
     if (!router) {
       return undefined
     }
 
-    const val: Param = _.get(router.query, param) ?? fallback
+    const val: Param = get(router.query, param) ?? fallback
     // if (val === undefined) {
     //   console.warn('Tried to get param', param, 'but it does not exist')
     // }
@@ -81,5 +98,7 @@ export default function useRouting<
     prefetch: router.prefetch,
     replace,
     setParams,
+    canGoBack,
+    pathname: router.pathname,
   }
 }
