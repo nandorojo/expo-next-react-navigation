@@ -29,7 +29,7 @@
     "@types/react-native": "^0.62.2",
     "expo-module-scripts": "^1.1.1",
     "jest-expo-enzyme": "^0.0.1",
-    "next": "^9.5.5",
+    "next": "^10.2.3",
     "prettier": "^1.19.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
