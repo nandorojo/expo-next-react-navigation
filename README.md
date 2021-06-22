@@ -137,7 +137,7 @@ It follows the [same API](https://reactnavigation.org/docs/en/next/use-navigatio
 import { useRouting } from 'expo-next-react-navigation`
 
 export default function App() {
-  const { navigation, push, getParam, goBack } = useRouting()
+  const { navigate, push, getParam, goBack } = useRouting()
 
 
 }
