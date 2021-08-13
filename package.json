@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.15",
-    "next": "^9.1.5",
+    "next": "^11.1.0",
     "react-navigation-hooks": "^1.1.0"
   }
 }
