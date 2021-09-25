@@ -14,30 +14,9 @@ _This is a new library, PRs are very welcome!_
 
 ### For `react-navigation` v6
 
-This is currently in development. 
-
-However, you can still use it now by installing the `v5` version, and adding a resolution to your `@react-navigation/native` version.
-
-First, install the `v5` version:
-
 ```sh
-yarn add expo-next-react-navigation@v5
+yarn add expo-next-react-navigation
 ```
-
-Next, add `resolutions` to your `package.json`:
-
-```json
-{
-  "resolutions": {
-    "@react-navigation/native": "6.0.2"
-  }
-}
-```
-
-You can replace `6.0.2` with the version that's in your dependencies.
-
-If you're using `npm` instead of `yarn`, you'll need to also add [`npm-force-resolutions`](https://www.npmjs.com/package/npm-force-resolutions).
-
 
 ### For `react-navigation` v5
 
@@ -50,13 +29,13 @@ yarn add expo-next-react-navigation@v5
 ### For `react-navigation` v4
 
 ```sh
-yarn add expo-next-react-navigation
+yarn add expo-next-react-navigation@0.0.25
 ```
-
+ 
 React navigation v4 is supported up to v0.0.25.
 
 
-I'm probably going to stop releasing new versions for `v4`, and `v5` will soon be upgraded to the `latest` tag.
+I'm probably going to stop releasing new versions for `v4`, and `v5` will soon be upgraded to the `latest` tag. 
 
 ## Table of contents
 
@@ -179,6 +158,7 @@ Only argument is a dictionary with these values. Unlike `react-navigation`, this
 - `web`: Optional dictionary with added values for web, following the API from `next/router`'s `Router.push` [function](https://nextjs.org/docs#with-url-object-1).
   - `path`: (optional) Fulfills the same value as `pathname` from `next/router`, overriding the `routeName` field. If you set this to `/cars`, it will navigate to `/cars` instead of the `routeName` field. As a result, it will load the file located at `pages/cars.js`.
   - `as`: (optional) If set, the browser will show this value in the address bar. Useful if you want to show a pretty/custom URL in the address bar that doesn't match the actual path. Unlike the `path` field, this does not affect which route you actually go to.
+  - `shallow`: Update the path of the current page without rerunning getStaticProps, getServerSideProps or getInitialProps. Defaults to false
 
 **Example:** Navigate to a user
 
@@ -293,6 +273,39 @@ export default function Button() {
 
 **Optional props**
 
+- `web`: A dictionary with the follwing options:
+
+```ts
+type Web = {
+  /**
+   * Alternative path to override routeName on web.
+   */
+  path?: string
+  /**
+   * A custom URL ending to show in the browser address bar instead of the `web.path` or `routeName`.
+   *
+   * Should start with `/`.
+   */
+  as?: string
+  /**
+   * Prefetch the page in the background. Defaults to `true`
+   */
+  prefetch?: boolean
+  /**
+   * Scroll to the top of the page after a navigation. Defaults to `true`
+   *
+   */
+  scroll?: boolean
+  /**
+   * Replace the current history state instead of adding a new url into the stack. Defaults to `false`
+   */
+  replace?: boolean
+  /**
+   * Update the path of the current page without rerunning getStaticProps, getServerSideProps or getInitialProps. Defaults to false
+   */
+  shallow?: boolean
+}
+```
 - `web`: dictionary, see [`useRouting().navigate`](#navigate) docs. On `v1.0.5`+, you can also pass the `prefetch`, `replace`, and `scroll` booleans here, from the `next/link` [component](https://nextjs.org/docs/api-reference/next/link).
 
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.

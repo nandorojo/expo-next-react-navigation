@@ -4,7 +4,7 @@ import { createAppContainer } from 'react-navigation'
 import { createStackNavigator } from 'react-navigation-stack'
 import { Link, useRouting } from 'expo-next-react-navigation'
 
-// See the pages/folder for the next.js routes
+// See the pages/ folder for the next.js routes
 // everything else is confined in this file :)
 
 export function Home() {
