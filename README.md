@@ -12,19 +12,30 @@ _This is a new library, PRs are very welcome!_
 
 ## Install
 
+### For `react-navigation` v6
+
 ```sh
 yarn add expo-next-react-navigation
 ```
 
-React navigation v4 is supported up to v0.0.24.
-
-**For `react-navigation` v5:**
+### For `react-navigation` v5
 
 Version 1.x supports v5.
 
 ```sh
 yarn add expo-next-react-navigation@v5
 ```
+
+### For `react-navigation` v4
+
+```sh
+yarn add expo-next-react-navigation@0.0.25
+```
+ 
+React navigation v4 is supported up to v0.0.25.
+
+
+I'm probably going to stop releasing new versions for `v4`, and `v5` will soon be upgraded to the `latest` tag. 
 
 ## Table of contents
 
@@ -61,24 +72,19 @@ yarn add next-compose-plugins next-fonts next-images next-transpile-modules
 **Step 2: edit `next.config.js` to look something like this:**
 
 ```es6
+/* eslint-disable @typescript-eslint/no-var-requires */
 const { withExpo } = require('@expo/next-adapter')
 const withFonts = require('next-fonts')
 const withImages = require('next-images')
-const withTM = require('next-transpile-modules')
 const withPlugins = require('next-compose-plugins')
 
+const withTM = require('next-transpile-modules')([
+  'expo-next-react-navigation',
+  // you can add other modules that need traspiling here
+])
+
 module.exports = withPlugins(
-  [
-    [
-      withTM,
-      {
-        transpileModules: ['expo-next-react-navigation'],
-      },
-    ],
-    withFonts,
-    withImages,
-    [withExpo, { projectRoot: __dirname }],
-  ],
+  [withTM, withFonts, withImages, [withExpo, { projectRoot: __dirname }]],
   {
     // ...
   }
@@ -300,10 +306,12 @@ type Web = {
   shallow?: boolean
 }
 ```
+- `web`: dictionary, see [`useRouting().navigate`](#navigate) docs. On `v1.0.5`+, you can also pass the `prefetch`, `replace`, and `scroll` booleans here, from the `next/link` [component](https://nextjs.org/docs/api-reference/next/link).
 
 - `touchableOpacityProps`: extends React Native's `TouchableOpacity` props.
 
 - `nextLinkProps`: extends `next/router`'s [Link props](https://nextjs.org/docs#with-link).
+- `isText`: if false, you can set the children to be non-Text nodes. Defaults to `true`. If `true`, the children can be a string **or** a `Text` node.
 
 ## Other shout outs
 
