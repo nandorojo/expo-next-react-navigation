@@ -24,7 +24,7 @@ First, install the `v5` version:
 yarn add expo-next-react-navigation@v5
 ```
 
-Next, add a `resolution` to your `package.json`:
+Next, add `resolutions` to your `package.json`:
 
 ```json
 {
