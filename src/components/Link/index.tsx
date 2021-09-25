@@ -10,6 +10,6 @@ const Link = React.forwardRef<Text, LinkProps<NextProps, Web>>(function Link(
 ) {
   const L = LinkMaker<NextProps, Web>() // we have to do this to be able to forward refs 🙃
   return <L {...props} ref={ref} />
-})
+}) 
 
 export default Link

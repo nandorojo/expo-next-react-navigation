@@ -1,5 +1,5 @@
 import React, { useMemo, ClassAttributes } from 'react'
-import { Text, View, ViewStyle, TextStyle } from 'react-native'
+import { Text, View, ViewStyle, TextStyle } from 'react-native' 
 import NextLink from 'next/link'
 import empty from '../../utils/empty'
 import { LinkProps } from 'expo-navigation-core'
@@ -11,7 +11,7 @@ import { NextProps, Web } from './types'
  * @param props
  *  - routeName: string
  *  - params?: object
- *  - web?: `{ path?: string; as?: string, replace?: boolean, scroll?: boolean, prefetch?: boolean }`
+ *  - web?: `{ path?: string; as?: string, replace?: boolean, scroll?: boolean, prefetch?: boolean }` 
  *
  * ## Usage
  *
@@ -38,7 +38,7 @@ const Link = React.forwardRef<Text | View, LinkProps<NextProps, Web>>(
       params = empty.object,
       children,
       isText = true,
-      web,
+      web, 
     } = props
     const query = useMemo(() => ({ ...params }), [params])
     const webPath = web?.path?.[0] === '/' ? web?.path?.slice(1) : web?.path
@@ -51,6 +51,7 @@ const Link = React.forwardRef<Text | View, LinkProps<NextProps, Web>>(
       }),
       [pathname, query]
     )
+
     return (
       <NextLink
         passHref
@@ -67,7 +68,7 @@ const Link = React.forwardRef<Text | View, LinkProps<NextProps, Web>>(
             {children}
           </Text>
         ) : (
-          <View accessibilityRole="link" style={style as ViewStyle}>
+          <View accessibilityRole="link" style={style as ViewStyle}> 
             {children}
           </View>
         )}
