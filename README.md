@@ -140,7 +140,7 @@ React hook that wraps `useNavigation` (from react-navigation) hook and `useRoute
 It follows the [same API](https://reactnavigation.org/docs/en/next/use-navigation.html) as `useNavigation`.
 
 ```es6
-import { useRouting } from 'expo-next-react-navigation`
+import { useRouting } from 'expo-next-react-navigation'
 
 export default function App() {
   const { navigate, push, getParam, goBack } = useRouting()
