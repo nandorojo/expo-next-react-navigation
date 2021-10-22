@@ -12,18 +12,10 @@ _This is a new library, PRs are very welcome!_
 
 ## Install
 
-### For `react-navigation` v6
+### For `react-navigation` v5 or v6:
 
 ```sh
 yarn add expo-next-react-navigation
-```
-
-### For `react-navigation` v5
-
-Version 1.x supports v5.
-
-```sh
-yarn add expo-next-react-navigation@v5
 ```
 
 ### For `react-navigation` v4
@@ -31,8 +23,6 @@ yarn add expo-next-react-navigation@v5
 ```sh
 yarn add expo-next-react-navigation@0.0.25
 ```
- 
-React navigation v4 is supported up to v0.0.25.
 
 
 I'm probably going to stop releasing new versions for `v4`, and `v5` will soon be upgraded to the `latest` tag. 
