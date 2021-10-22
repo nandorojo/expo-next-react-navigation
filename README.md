@@ -4,7 +4,11 @@ A set of hooks that wrap the `react-navigation` API that you're used to, and mak
 
 This library helps me use the [Expo + Next.js integration](https://docs.expo.io/versions/latest/guides/using-nextjs/) without stressing about navigation.
 
-_This is a new library, PRs are very welcome!_
+## Next.js Conf
+
+<img width="1779" alt="Screen Shot 2021-10-22 at 3 00 05 PM" src="https://user-images.githubusercontent.com/13172299/138509139-412b2d32-841b-4a7e-950e-f8721c1da17f.png">
+
+I'm speaking at [Next.js Conf 20201](https://nextjs.org/conf/speakers/fernando) on October 26 about React Native + Next.js. Get your ticket to see how we do it.
 
 ## Example
 
@@ -38,7 +42,13 @@ yarn add expo-next-react-navigation@0.0.25
 
 **Before continuing**, I highly, highly recommend using [this monorepo](https://github.com/axeldelafosse/expo-next-monorepo-example) as your starter.
 
-The steps below are copied from Expo's docs essentially. However, the monorepo above is much more updated, and it works with Next.js 11, Webpack 5, and React Navigation v6 😎
+The steps below are copied from Expo's docs essentially. 
+
+However, the monorepo above is much more updated, and it works with Next.js 11, Webpack 5, and React Navigation v6 😎
+
+If you use the monorepo, you don't need to do the setup below.
+
+----
 
 **Step 0. Install next with expo:**
 
