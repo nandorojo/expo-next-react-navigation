@@ -8,7 +8,7 @@ This library helps me use the [Expo + Next.js integration](https://docs.expo.io/
 
 <img width="1779" alt="Screen Shot 2021-10-22 at 3 00 05 PM" src="https://user-images.githubusercontent.com/13172299/138509139-412b2d32-841b-4a7e-950e-f8721c1da17f.png">
 
-I'm speaking at [Next.js Conf 20201](https://nextjs.org/conf/speakers/fernando) on October 26 about React Native + Next.js. Get your ticket to see how we do it.
+I'm speaking at [Next.js Conf 2021](https://nextjs.org/conf/speakers/fernando) on October 26 about React Native + Next.js. Get your ticket to see how we do it.
 
 ## Example
 
