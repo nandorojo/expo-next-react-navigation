@@ -24,9 +24,6 @@ yarn add expo-next-react-navigation
 yarn add expo-next-react-navigation@0.0.25
 ```
 
-
-I'm probably going to stop releasing new versions for `v4`, and `v5` will soon be upgraded to the `latest` tag. 
-
 ## Table of contents
 
 - [Set up](#set-up)
@@ -39,7 +36,13 @@ I'm probably going to stop releasing new versions for `v4`, and `v5` will soon b
 
 ## Set up
 
+**Before continuing**, I highly, highly recommend using [this monorepo](https://github.com/axeldelafosse/expo-next-monorepo-example) as your starter.
+
+The steps below are copied from Expo's docs essentially. However, the monorepo above is much more updated, and it works with Next.js 11, Webpack 5, and React Navigation v6 😎
+
 **Step 0. Install next with expo:**
+
+
 
 - Init: `expo init` (or `npx create-next-app`)
 
