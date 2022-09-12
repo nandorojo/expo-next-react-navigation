@@ -4,7 +4,7 @@ Exciting news: the future of this library will be [solito](https://github.com/na
 
 This change is a result of my thinking on [#68](https://github.com/nandorojo/expo-next-react-navigation/issues) about the future API.
 
-If you're already using `expo-next-react-navigation`, don't stress. You can continue to use it as you please. But I recommend using solito, even if you're incrememntally adopting it. 
+If you're already using `expo-next-react-navigation`, don't stress. You can continue to use it as you please. But I recommend using solito, even if you're incrementally adopting it. 
 
 I have *tons* of code using `expo-next-react-navigation` in my own app, and I won't be able to change it overnight. But going forward, all new navigation code I write will use solito instead.
 
